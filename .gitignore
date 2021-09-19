@@ -40,3 +40,10 @@ build/
 
 ### VS Code ###
 .vscode/
+
+/target/
+/.idea/
+/*.iml
+/.settings/
+/.project
+/.classpath
