@@ -23,7 +23,7 @@ public class AssistantController {
         return "Hello World";
     }
 
-    @GetMapping(value = "/lucky")
+    @GetMapping(value = "/lucky", produces = "application/json;charset=UTF-8")
     public Event getLuckyEvent() {
         return kudagoClient.lucky();
     }

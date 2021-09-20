@@ -4,10 +4,10 @@ services:
   app:
     ports:
       - "8080:8080"
-    image: 'docker-spring-boot-postgres:latest'
+    image: 'sb-assistant-app:latest'
     build:
       context: .
-    container_name: app
+    container_name: sb-assistant-app
     depends_on:
       - db
     environment:
