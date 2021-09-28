@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/assistantServer.iml" filepath="$PROJECT_DIR$/assistantServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kudago-api-client/kudago-api-client.iml" filepath="$PROJECT_DIR$/kudago-api-client/kudago-api-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sb-assistant-app/sb-assistant-app.iml" filepath="$PROJECT_DIR$/sb-assistant-app/sb-assistant-app.iml" />
+    </modules>
+  </component>
+</project>

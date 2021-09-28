@@ -11,6 +11,14 @@ public class Event implements Serializable {
     @JsonProperty(value = "favorites_count")
     private int favoritesCount;
     private String description;
+    private String id;
+    private EventDate [] dates;
+    @JsonProperty(value = "age_restriction")
+    private String ageRestriction;
+    private String price;
+    @JsonProperty(value = "is_free")
+    private boolean isFree;
+    private EventImage [] images;
 
     public String getTitle() {
         return title;
@@ -34,5 +42,53 @@ public class Event implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public EventDate[] getDates() {
+        return dates;
+    }
+
+    public void setDates(EventDate[] dates) {
+        this.dates = dates;
+    }
+
+    public String getAgeRestriction() {
+        return ageRestriction;
+    }
+
+    public void setAgeRestriction(String ageRestriction) {
+        this.ageRestriction = ageRestriction;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public boolean isFree() {
+        return isFree;
+    }
+
+    public void setFree(boolean free) {
+        isFree = free;
+    }
+
+    public EventImage[] getImages() {
+        return images;
+    }
+
+    public void setImages(EventImage[] images) {
+        this.images = images;
     }
 }
