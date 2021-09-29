@@ -2,6 +2,8 @@ package com.sb.api.kudago.client.impl;
 
 import com.sb.api.kudago.client.KudagoClient;
 import com.sb.api.kudago.model.Event;
+import com.sb.api.kudago.model.ref.Category;
+import com.sb.api.kudago.model.ref.Location;
 import com.sb.api.kudago.model.response.SearchResponse;
 import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
@@ -9,6 +11,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class KudagoClientImpl implements KudagoClient {
 
@@ -73,8 +76,11 @@ public class KudagoClientImpl implements KudagoClient {
 
 
     @Override
-    public List<Event> searchEvents(Date DateFrom, Date DateTo, String location, String isFree, String categories) {
-        SearchResponse response=getEventList(DateFrom,DateTo,location,isFree,categories);
+    public List<Event> searchEvents(Date DateFrom, Date DateTo, Location location, String isFree, Category categories) {
+        String locationVal=location!= null ?location.getApiVal():"";
+        String categoryVal=categories!= null ?categories.getApiVal():"";
+        SearchResponse response=getEventList(DateFrom,DateTo,locationVal,isFree,categoryVal);
+        // TODO: пока принимаем одну категорию (можно несколько)
         if(response!=null && response.getCount()>0){
             return response.getResults();
         }

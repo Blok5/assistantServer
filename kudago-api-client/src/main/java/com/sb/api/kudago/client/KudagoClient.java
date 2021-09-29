@@ -2,6 +2,8 @@ package com.sb.api.kudago.client;
 
 
 import com.sb.api.kudago.model.Event;
+import com.sb.api.kudago.model.ref.Category;
+import com.sb.api.kudago.model.ref.Location;
 import com.sb.api.kudago.model.response.SearchResponse;
 
 import java.util.Date;
@@ -12,7 +14,7 @@ public interface KudagoClient {
 //
 //    SearchResponse getEventList(Date DateFrom, Date DateTo, String location, String isFree,String category);
 
-    List<Event> searchEvents(Date DateFrom, Date DateTo, String location, String isFree, String categories);
+    List<Event> searchEvents(Date DateFrom, Date DateTo, Location location, String isFree, Category categories);
 
     Event lucky() ;
 
