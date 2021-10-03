@@ -1,24 +1,25 @@
-version: '2'
+version: '3.8'
 
 services:
-  app:
+  server-app:
     ports:
-      - "8080:8080"
-    image: 'docker-spring-boot-postgres:latest'
+      - "8080:80"
+    image: 'server-app:latest'
     build:
       context: .
-    container_name: app
+    container_name: server-app
     depends_on:
       - db
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/assistant
-      - SPRING_DATASOURCE_USERNAME=assistant
-      - SPRING_DATASOURCE_PASSWORD=assistant
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/assistant
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=assistant1
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
 
   db:
     image: 'postgres:13.1-alpine'
     container_name: db
     environment:
-      - POSTGRES_USER=assistant
-      - POSTGRES_PASSWORD=assistant
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=assistant1
+      - POSTGRES_DB=assistant
