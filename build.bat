@@ -13,9 +13,5 @@ cp -v sb-assistant-front-app/build/* sb-assistant-app/src/main/resources/static
 :: build new images
 docker-compose -f src/main/docker/docker-compose.yml build
 
-rem docker-compose -f src/main/docker/docker-compose.yml down
-rem docker rmi sb-assistant-app:latest
-rem docker rmi postgres:13.1-alpine
-rem ./mvnw clean package
-rem cp sb-assistant-app/target/*.jar src/main/docker
-rem docker-compose -f src/main/docker/docker-compose.yml up
+:: docker-compose -f src/main/docker/docker-compose.yml down
+:: docker-compose -f src/main/docker/docker-compose.yml up
