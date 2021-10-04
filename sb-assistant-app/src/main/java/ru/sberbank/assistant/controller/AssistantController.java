@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import ru.sberbank.assistant.component.KudagoCache;
 
 import java.util.Date;
 import java.util.List;
@@ -21,11 +22,11 @@ import java.util.List;
 @RequestMapping(path = "api/v1")
 public class AssistantController {
 
-    private final KudagoClient kudagoClient;
+    private final KudagoCache kudagoCache;
 
     @Autowired
-    public AssistantController(KudagoClient kudagoClient) {
-        this.kudagoClient = kudagoClient;
+    public AssistantController(KudagoCache kudagoCache) {
+        this.kudagoCache = kudagoCache;
     }
 
     @ApiOperation(value = "Test the api application is working correctly")
@@ -44,7 +45,9 @@ public class AssistantController {
     @ApiOperation(value = "Get random today event if you are lucky")
     @GetMapping(value = "/lucky", produces = "application/json;charset=UTF-8")
     public Event getLuckyEvent() {
-        return kudagoClient.lucky();
+
+            return kudagoCache.lucky();
+
     }
 
     @ApiOperation(value = "Search events by different filters")
@@ -54,7 +57,9 @@ public class AssistantController {
                                      @ApiParam(allowableValues="spb,msk,nsk,ekb,nnv,kzn,vbg,smr,krd,sochi,ufa,krasnoyarsk,kev") @RequestParam(name="location",required=false) Location location,
                                      @RequestParam(name="isFree",required=false) String isFree,
                                      @ApiParam(allowableValues="cinema,concert,education,entertainment,exhibition,fashion,festival,kids,party,quest,theater,tour,yarmarki-razvlecheniya-yarmarki") @RequestParam(name="categories",required=false) Category categories){
-                                     return kudagoClient.searchEvents(dateTo,dateFrom,location,isFree,categories);
+
+
+                                     return kudagoCache.searchEvents(dateTo,dateFrom,location,isFree,categories);
     }
 
 }

@@ -1,6 +1,7 @@
 package ru.sberbank.assistant.config;
 
 
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
@@ -11,6 +12,7 @@ import org.springframework.http.converter.ResourceHttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.*;
+import ru.sberbank.assistant.converter.StringToKudagoCategoryConverter;
 import ru.sberbank.assistant.converter.StringToKudagoLocationConverter;
 
 import java.util.Arrays;
@@ -37,8 +39,9 @@ public class WebApplicationConfig implements WebMvcConfigurer {
     @Override
     public void addFormatters(FormatterRegistry registry) {
         registry.addConverter(new StringToKudagoLocationConverter());
-        registry.addConverter(new StringToKudagoLocationConverter());
+        registry.addConverter(new StringToKudagoCategoryConverter());
     }
+
 
     private ByteArrayHttpMessageConverter byteArrayHttpMessageConverter() {
         ByteArrayHttpMessageConverter arrayHttpMessageConverter = new ByteArrayHttpMessageConverter();

@@ -1,9 +1,13 @@
 package com.sb.api.kudago.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.sb.api.kudago.model.ref.Category;
+import com.sb.api.kudago.model.ref.Location;
 
 import java.io.Serializable;
+import java.util.Date;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Event implements Serializable {
@@ -90,5 +94,60 @@ public class Event implements Serializable {
 
     public void setImages(EventImage[] images) {
         this.images = images;
+    }
+
+    @JsonIgnore
+    public boolean applyFilters(Date dateFrom, Date dateTo, Location location, String isFree, Category categories){
+        boolean dateFromVal=false;
+        boolean dateToVal=false;
+        boolean locationVal=false;
+        boolean isFreeVal=false;
+        boolean categoriesVal=false;
+
+        if(dateFrom== null){
+            dateFromVal=true;
+        }else{
+            if(getDates()!=null){
+                for(EventDate date:getDates()){
+                    if(dateFrom.getTime()/1000L> Long.parseLong(date.getStart())){
+                        dateFromVal=true;
+                        break;
+                    }
+                }
+            }
+        }
+        if(dateTo== null){
+            dateToVal=true;
+        }else{
+            if(getDates()!=null){
+                for(EventDate date:getDates()){
+                    if(dateTo.getTime()/1000L< Long.parseLong(date.getEnd())){
+                        dateToVal=true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        //todo location parse
+       /* if(location==null){
+            locationVal=true;
+        }else if(location.equals(this.)){
+
+        } */
+
+        //todo category parse
+       /* if(location==null){
+            locationVal=true;
+        }else if(location.equals(this.)){
+
+        } */
+
+       if(isFree==null){
+           isFreeVal=true;
+       }else if(Boolean.parseBoolean(isFree)==isFree()){
+           isFreeVal=true;
+       }
+        return (dateFromVal && dateToVal && isFreeVal);
     }
 }

@@ -10,6 +10,7 @@ import java.util.List;
 public class SearchResponse implements Serializable {
 
     private int count;
+    private String next;
     private List<Event> results;
 
     public int getCount() {
@@ -26,5 +27,13 @@ public class SearchResponse implements Serializable {
 
     public void setResults(List<Event> results) {
         this.results = results;
+    }
+
+    public String getNext() {
+        return next;
+    }
+
+    public void setNext(String next) {
+        this.next = next;
     }
 }
