@@ -3,6 +3,7 @@ version: '3.8'
 services:
   server-app:
     ports:
+      - "80:8080"
       - "443:8443"
     image: 'server-app:latest'
     build:
