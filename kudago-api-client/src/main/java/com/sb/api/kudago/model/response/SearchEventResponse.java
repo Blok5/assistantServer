@@ -1,13 +1,13 @@
 package com.sb.api.kudago.model.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.sb.api.kudago.model.Event;
+import com.sb.api.kudago.model.event.Event;
 
 import java.io.Serializable;
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SearchResponse implements Serializable {
+public class SearchEventResponse implements Serializable {
 
     private int count;
     private String next;

@@ -1,4 +1,4 @@
-package com.sb.api.kudago.model;
+package com.sb.api.kudago.model.event;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

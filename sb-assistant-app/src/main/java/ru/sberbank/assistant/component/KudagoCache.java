@@ -1,15 +1,13 @@
 package ru.sberbank.assistant.component;
 
 import com.sb.api.kudago.client.KudagoClient;
-import com.sb.api.kudago.model.Event;
+import com.sb.api.kudago.model.event.Event;
 import com.sb.api.kudago.model.ref.Category;
 import com.sb.api.kudago.model.ref.Location;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 @Component

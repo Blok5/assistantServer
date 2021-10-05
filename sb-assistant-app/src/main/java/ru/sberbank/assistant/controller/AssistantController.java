@@ -1,7 +1,6 @@
 package ru.sberbank.assistant.controller;
 
-import com.sb.api.kudago.client.KudagoClient;
-import com.sb.api.kudago.model.Event;
+import com.sb.api.kudago.model.event.Event;
 import com.sb.api.kudago.model.ref.Category;
 import com.sb.api.kudago.model.ref.Location;
 import io.swagger.annotations.Api;

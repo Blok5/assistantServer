@@ -1,13 +1,17 @@
-package com.sb.api.kudago.model;
+package com.sb.api.kudago.model.event;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSetter;
+import com.sb.api.kudago.model.place.Place;
 import com.sb.api.kudago.model.ref.Category;
 import com.sb.api.kudago.model.ref.Location;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Event implements Serializable {
@@ -23,6 +27,8 @@ public class Event implements Serializable {
     @JsonProperty(value = "is_free")
     private boolean isFree;
     private EventImage [] images;
+    private Place place;
+    private List<Category> categoryList;
 
     public String getTitle() {
         return title;
@@ -137,17 +143,54 @@ public class Event implements Serializable {
         } */
 
         //todo category parse
-       /* if(location==null){
-            locationVal=true;
-        }else if(location.equals(this.)){
-
-        } */
+        if(categories==null){
+            categoriesVal=true;
+        }else if(categoryList!=null){
+            for (Category cat: categoryList){
+                if(cat.equals(categories)){
+                    categoriesVal=true;
+                }
+            }
+        }
 
        if(isFree==null){
            isFreeVal=true;
        }else if(Boolean.parseBoolean(isFree)==isFree()){
            isFreeVal=true;
        }
-        return (dateFromVal && dateToVal && isFreeVal);
+        return (dateFromVal && dateToVal && categoriesVal && isFreeVal);
+    }
+
+    @JsonSetter("categories")
+    public void deserializeCategories(List<String> source){
+        categoryList=null;
+        for(String sourceVal:source){
+            try {
+                Category cat=Category.fromApiVal(sourceVal);
+                if(categoryList==null){
+                    categoryList=new ArrayList<>();
+                }
+                categoryList.add(cat);
+            }catch (IllegalArgumentException e){
+                // пропускаем
+            }
+        }
+    }
+
+    public List<Category> getCategoryList() {
+        return categoryList;
+    }
+
+    public void setCategoryList(List<Category> categories) {
+        this.categoryList = categories;
+    }
+
+
+    public Place getPlace() {
+        return place;
+    }
+
+    public void setPlace(Place place) {
+        this.place = place;
     }
 }
