@@ -42,7 +42,8 @@ public class KudagoJob implements Job {
 
                 }
             if(response!=null && response.getResults()!=null){
-                kudagoCache.setEventNewList(new CopyOnWriteArrayList<>(response.getResults()));
+                kudagoCache.setEventNewList(new CopyOnWriteArrayList<>(response.getResults().stream().filter(e->e.getPlace()!=null)
+                        .collect(Collectors.toList())));
             }
 
         }

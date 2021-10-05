@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/assistant-application.iml" filepath="$PROJECT_DIR$/assistant-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2gis-api-client/2gis-api-client.iml" filepath="$PROJECT_DIR$/2gis-api-client/2gis-api-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/assistantServer_upd.iml" filepath="$PROJECT_DIR$/assistantServer_upd.iml" />
       <module fileurl="file://$PROJECT_DIR$/kudago-api-client/kudago-api-client.iml" filepath="$PROJECT_DIR$/kudago-api-client/kudago-api-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/sb-assistant-app/sb-assistant-app.iml" filepath="$PROJECT_DIR$/sb-assistant-app/sb-assistant-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/sb-assistant-front-app/sb-assistant-front-app.iml" filepath="$PROJECT_DIR$/sb-assistant-front-app/sb-assistant-front-app.iml" />

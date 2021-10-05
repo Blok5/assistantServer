@@ -9,7 +9,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/kudago-api-client/pom.xml" />
+        <option value="$PROJECT_DIR$/2gis-api-client/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

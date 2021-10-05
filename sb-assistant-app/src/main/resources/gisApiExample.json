@@ -1,0 +1,1065 @@
+{
+  "meta": {
+    "api_version": "3.0.672035",
+    "code": 200,
+    "issue_date": "20211005"
+  },
+  "result": {
+    "items": [
+      {
+        "address_comment": "1 этаж",
+        "address_name": "Волгоградский проспект, 73 ст1",
+        "external_content": [
+          {
+            "count": 50,
+            "main_photo_url": "https://i1.photo.2gis.com/main/branch/32/4504127908349262/common",
+            "subtype": "common",
+            "type": "photo_album"
+          },
+          {
+            "count": 2,
+            "main_photo_url": "https://i1.photo.2gis.com/main/geo/32/4504235282555243/view",
+            "subtype": "view",
+            "type": "photo_album"
+          }
+        ],
+        "id": "4504127908349262",
+        "name": "Da Pino, сеть итальянских ресторанов",
+        "point": {
+          "lat": 55.709783,
+          "lon": 37.744346
+        },
+        "reviews": {
+          "general_rating": 3.6,
+          "general_review_count": 23,
+          "is_reviewable": true,
+          "is_reviewable_on_flamp": true,
+          "items": [
+            {
+              "is_reviewable": true,
+              "tag": "2gis_reviews"
+            },
+            {
+              "is_reviewable": true,
+              "rating": 3.9,
+              "recommendation_count": 1,
+              "review_count": 9,
+              "tag": "flamp"
+            }
+          ],
+          "org_rating": 3.7,
+          "org_review_count": 57,
+          "rating": 3.9,
+          "recommendation_count": 1,
+          "review_count": 9
+        },
+        "schedule": {
+          "Fri": {
+            "working_hours": [
+              {
+                "from": "12:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Mon": {
+            "working_hours": [
+              {
+                "from": "12:00",
+                "to": "23:00"
+              }
+            ]
+          },
+          "Sat": {
+            "working_hours": [
+              {
+                "from": "12:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Sun": {
+            "working_hours": [
+              {
+                "from": "12:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Thu": {
+            "working_hours": [
+              {
+                "from": "12:00",
+                "to": "23:00"
+              }
+            ]
+          },
+          "Tue": {
+            "working_hours": [
+              {
+                "from": "12:00",
+                "to": "23:00"
+              }
+            ]
+          },
+          "Wed": {
+            "working_hours": [
+              {
+                "from": "12:00",
+                "to": "23:00"
+              }
+            ]
+          }
+        },
+        "type": "branch"
+      },
+      {
+        "address_comment": "1 этаж",
+        "address_name": "Новопетровская, 14",
+        "external_content": [
+          {
+            "count": 15,
+            "main_photo_url": "https://i1.photo.2gis.com/main/branch/32/4504127908350988/common",
+            "subtype": "common",
+            "type": "photo_album"
+          },
+          {
+            "count": 1,
+            "main_photo_url": "https://i1.photo.2gis.com/main/geo/32/4504235282577929/view",
+            "subtype": "view",
+            "type": "photo_album"
+          }
+        ],
+        "id": "4504127908350988",
+        "name": "Адажио, кафе",
+        "point": {
+          "lat": 55.827244,
+          "lon": 37.522202
+        },
+        "reviews": {
+          "general_rating": 4.6,
+          "general_review_count": 5,
+          "is_reviewable": true,
+          "is_reviewable_on_flamp": true,
+          "items": [
+            {
+              "is_reviewable": true,
+              "tag": "2gis_reviews"
+            },
+            {
+              "is_reviewable": true,
+              "rating": 4,
+              "review_count": 2,
+              "tag": "flamp"
+            }
+          ],
+          "org_rating": 4.6,
+          "org_review_count": 5,
+          "rating": 4,
+          "review_count": 2
+        },
+        "schedule": {
+          "Fri": {
+            "working_hours": [
+              {
+                "from": "11:00",
+                "to": "23:00"
+              }
+            ]
+          },
+          "Mon": {
+            "working_hours": [
+              {
+                "from": "11:00",
+                "to": "23:00"
+              }
+            ]
+          },
+          "Sat": {
+            "working_hours": [
+              {
+                "from": "11:00",
+                "to": "23:00"
+              }
+            ]
+          },
+          "Sun": {
+            "working_hours": [
+              {
+                "from": "11:00",
+                "to": "23:00"
+              }
+            ]
+          },
+          "Thu": {
+            "working_hours": [
+              {
+                "from": "11:00",
+                "to": "23:00"
+              }
+            ]
+          },
+          "Tue": {
+            "working_hours": [
+              {
+                "from": "11:00",
+                "to": "23:00"
+              }
+            ]
+          },
+          "Wed": {
+            "working_hours": [
+              {
+                "from": "11:00",
+                "to": "23:00"
+              }
+            ]
+          }
+        },
+        "type": "branch"
+      },
+      {
+        "address_name": "Глубокий переулок, 1/2",
+        "external_content": [
+          {
+            "count": 69,
+            "main_photo_url": "https://i7.photo.2gis.com/main/branch/32/4504127908358037/common",
+            "subtype": "common",
+            "type": "photo_album"
+          },
+          {
+            "count": 1,
+            "main_photo_url": "http://i2.photo.2gis.com/main/geo/32/70030076131995892/view",
+            "subtype": "view",
+            "type": "photo_album"
+          }
+        ],
+        "id": "4504127908358037",
+        "name": "317, городское кафе",
+        "point": {
+          "lat": 55.754677,
+          "lon": 37.569883
+        },
+        "reviews": {
+          "general_rating": 4,
+          "general_review_count": 20,
+          "is_reviewable": true,
+          "is_reviewable_on_flamp": true,
+          "items": [
+            {
+              "is_reviewable": true,
+              "tag": "2gis_reviews"
+            },
+            {
+              "is_reviewable": true,
+              "rating": 4.5,
+              "recommendation_count": 2,
+              "review_count": 6,
+              "tag": "flamp"
+            }
+          ],
+          "org_rating": 4,
+          "org_review_count": 20,
+          "rating": 4.5,
+          "recommendation_count": 2,
+          "review_count": 6
+        },
+        "schedule": {
+          "Fri": {
+            "working_hours": [
+              {
+                "from": "11:00",
+                "to": "23:00"
+              }
+            ]
+          },
+          "Mon": {
+            "working_hours": [
+              {
+                "from": "11:00",
+                "to": "23:00"
+              }
+            ]
+          },
+          "Sat": {
+            "working_hours": [
+              {
+                "from": "11:00",
+                "to": "23:00"
+              }
+            ]
+          },
+          "Sun": {
+            "working_hours": [
+              {
+                "from": "11:00",
+                "to": "23:00"
+              }
+            ]
+          },
+          "Thu": {
+            "working_hours": [
+              {
+                "from": "11:00",
+                "to": "23:00"
+              }
+            ]
+          },
+          "Tue": {
+            "working_hours": [
+              {
+                "from": "11:00",
+                "to": "23:00"
+              }
+            ]
+          },
+          "Wed": {
+            "working_hours": [
+              {
+                "from": "11:00",
+                "to": "23:00"
+              }
+            ]
+          }
+        },
+        "type": "branch"
+      },
+      {
+        "address_comment": "1 этаж",
+        "address_name": "Садовая-Триумфальная, 4/10",
+        "external_content": [
+          {
+            "count": 4,
+            "main_photo_url": "https://i1.photo.2gis.com/main/branch/32/4504127908361133/common",
+            "subtype": "common",
+            "type": "photo_album"
+          },
+          {
+            "count": 4,
+            "main_photo_url": "https://i1.photo.2gis.com/main/geo/32/4504235282735947/view",
+            "subtype": "view",
+            "type": "photo_album"
+          }
+        ],
+        "id": "4504127908361133",
+        "name": "Де Марко, сеть ресторанов",
+        "point": {
+          "lat": 55.770149,
+          "lon": 37.598474
+        },
+        "reviews": {
+          "general_rating": 4.1,
+          "general_review_count": 61,
+          "is_reviewable": true,
+          "is_reviewable_on_flamp": true,
+          "items": [
+            {
+              "is_reviewable": true,
+              "tag": "2gis_reviews"
+            },
+            {
+              "is_reviewable": true,
+              "rating": 4.7,
+              "recommendation_count": 14,
+              "review_count": 50,
+              "tag": "flamp"
+            }
+          ],
+          "org_rating": 3.5,
+          "org_review_count": 104,
+          "rating": 4.7,
+          "recommendation_count": 14,
+          "review_count": 50
+        },
+        "schedule": {
+          "Fri": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Mon": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Sat": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Sun": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Thu": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Tue": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Wed": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "is_24x7": true
+        },
+        "type": "branch"
+      },
+      {
+        "address_comment": "1 этаж",
+        "address_name": "Смоленская-Сенная площадь, 23/25",
+        "external_content": [
+          {
+            "count": 9,
+            "main_photo_url": "https://i3.photo.2gis.com/main/branch/32/4504127908361134/common",
+            "subtype": "common",
+            "type": "photo_album"
+          },
+          {
+            "count": 7,
+            "main_photo_url": "https://i1.photo.2gis.com/main/geo/32/4504235282738325/view",
+            "subtype": "view",
+            "type": "photo_album"
+          }
+        ],
+        "id": "4504127908361134",
+        "name": "Де Марко, сеть ресторанов",
+        "point": {
+          "lat": 55.744207,
+          "lon": 37.583109
+        },
+        "reviews": {
+          "general_rating": 2.1,
+          "general_review_count": 8,
+          "is_reviewable": true,
+          "is_reviewable_on_flamp": true,
+          "items": [
+            {
+              "is_reviewable": true,
+              "tag": "2gis_reviews"
+            },
+            {
+              "is_reviewable": true,
+              "rating": 3.3,
+              "review_count": 3,
+              "tag": "flamp"
+            }
+          ],
+          "org_rating": 3.5,
+          "org_review_count": 104,
+          "rating": 3.3,
+          "review_count": 3
+        },
+        "schedule": {
+          "Fri": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Mon": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Sat": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Sun": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Thu": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Tue": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Wed": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "is_24x7": true
+        },
+        "type": "branch"
+      },
+      {
+        "address_comment": "1 этаж",
+        "address_name": "Осташковский проезд, 6 ст2",
+        "external_content": [
+          {
+            "count": 24,
+            "main_photo_url": "https://i1.photo.2gis.com/main/branch/32/4504127908361193/common",
+            "subtype": "common",
+            "type": "photo_album"
+          }
+        ],
+        "id": "4504127908361193",
+        "name": "Дежа Вю, ресторанный комплекс",
+        "point": {
+          "lat": 55.876492,
+          "lon": 37.68529
+        },
+        "reviews": {
+          "general_rating": 4.6,
+          "general_review_count": 5,
+          "is_reviewable": true,
+          "is_reviewable_on_flamp": true,
+          "items": [
+            {
+              "is_reviewable": true,
+              "tag": "2gis_reviews"
+            },
+            {
+              "is_reviewable": true,
+              "rating": 4.8,
+              "recommendation_count": 1,
+              "review_count": 4,
+              "tag": "flamp"
+            }
+          ],
+          "org_rating": 4.6,
+          "org_review_count": 5,
+          "rating": 4.8,
+          "recommendation_count": 1,
+          "review_count": 4
+        },
+        "schedule": {
+          "Fri": {
+            "working_hours": [
+              {
+                "from": "12:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Mon": {
+            "working_hours": [
+              {
+                "from": "12:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Sat": {
+            "working_hours": [
+              {
+                "from": "12:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Sun": {
+            "working_hours": [
+              {
+                "from": "12:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Thu": {
+            "working_hours": [
+              {
+                "from": "12:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Tue": {
+            "working_hours": [
+              {
+                "from": "12:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Wed": {
+            "working_hours": [
+              {
+                "from": "12:00",
+                "to": "24:00"
+              }
+            ]
+          }
+        },
+        "type": "branch"
+      },
+      {
+        "address_name": "Большая Якиманка, 24",
+        "building_name": "Президент-отель, гостиничный комплекс",
+        "external_content": [
+          {
+            "count": 134,
+            "main_photo_url": "https://i6.photo.2gis.com/main/branch/32/4504127908373187/common",
+            "subtype": "common",
+            "type": "photo_album"
+          },
+          {
+            "count": 5,
+            "main_photo_url": "https://i1.photo.2gis.com/main/geo/32/4504235282724016/view",
+            "subtype": "view",
+            "type": "photo_album"
+          }
+        ],
+        "full_name": "Москва, Президент-отель, гостиничный комплекс",
+        "id": "4504127908373187",
+        "name": "Президент-Отель, гостиничный комплекс",
+        "point": {
+          "lat": 55.737435,
+          "lon": 37.613295
+        },
+        "purpose_name": "Гостиница",
+        "reviews": {
+          "general_rating": 4.5,
+          "general_review_count": 15,
+          "is_reviewable": true,
+          "is_reviewable_on_flamp": true,
+          "items": [
+            {
+              "is_reviewable": true,
+              "tag": "2gis_reviews"
+            },
+            {
+              "is_reviewable": true,
+              "rating": 4.6,
+              "recommendation_count": 2,
+              "review_count": 7,
+              "tag": "flamp"
+            }
+          ],
+          "org_rating": 4.5,
+          "org_review_count": 15,
+          "rating": 4.6,
+          "recommendation_count": 2,
+          "review_count": 7
+        },
+        "schedule": {
+          "Fri": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Mon": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Sat": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Sun": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Thu": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Tue": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Wed": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "is_24x7": true
+        },
+        "type": "branch"
+      },
+      {
+        "address_name": "шоссе Волоколамское, 30 к1",
+        "external_content": [
+          {
+            "count": 15,
+            "main_photo_url": "https://i7.photo.2gis.com/main/branch/32/4504127908376291/common",
+            "subtype": "common",
+            "type": "photo_album"
+          }
+        ],
+        "full_name": "Москва, шоссе Волоколамское, 30",
+        "id": "4504127908376291",
+        "name": "Покровское Стрешнево, гостиница",
+        "point": {
+          "lat": 55.813297,
+          "lon": 37.478667
+        },
+        "purpose_name": "Гостиница",
+        "reviews": {
+          "general_rating": 2.9,
+          "general_review_count": 12,
+          "is_reviewable": true,
+          "is_reviewable_on_flamp": true,
+          "items": [
+            {
+              "is_reviewable": true,
+              "tag": "2gis_reviews"
+            },
+            {
+              "is_reviewable": true,
+              "rating": 1.5,
+              "review_count": 3,
+              "tag": "flamp"
+            }
+          ],
+          "org_rating": 2.9,
+          "org_review_count": 12,
+          "rating": 1.5,
+          "review_count": 3
+        },
+        "schedule": {
+          "Fri": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Mon": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Sat": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Sun": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Thu": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Tue": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Wed": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "is_24x7": true
+        },
+        "type": "branch"
+      },
+      {
+        "address_name": "Останкинская 1-я, вл7а ст17",
+        "external_content": [
+          {
+            "count": 16,
+            "main_photo_url": "https://i1.photo.2gis.com/main/branch/32/4504127908381312/common",
+            "subtype": "common",
+            "type": "photo_album"
+          }
+        ],
+        "full_name": "Москва, Останкинская 1-я, вл7а ст17",
+        "id": "4504127908381312",
+        "name": "Лав, кафе",
+        "point": {
+          "lat": 55.828684,
+          "lon": 37.614542
+        },
+        "purpose_name": "Кафе, бар",
+        "reviews": {
+          "general_rating": 4,
+          "general_review_count": 14,
+          "is_reviewable": true,
+          "is_reviewable_on_flamp": true,
+          "items": [
+            {
+              "is_reviewable": true,
+              "tag": "2gis_reviews"
+            },
+            {
+              "is_reviewable": true,
+              "rating": 4.2,
+              "recommendation_count": 1,
+              "review_count": 5,
+              "tag": "flamp"
+            }
+          ],
+          "org_rating": 4,
+          "org_review_count": 14,
+          "rating": 4.2,
+          "recommendation_count": 1,
+          "review_count": 5
+        },
+        "schedule": {
+          "Fri": {
+            "working_hours": [
+              {
+                "from": "10:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Mon": {
+            "working_hours": [
+              {
+                "from": "10:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Sat": {
+            "working_hours": [
+              {
+                "from": "10:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Sun": {
+            "working_hours": [
+              {
+                "from": "10:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Thu": {
+            "working_hours": [
+              {
+                "from": "10:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Tue": {
+            "working_hours": [
+              {
+                "from": "10:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Wed": {
+            "working_hours": [
+              {
+                "from": "10:00",
+                "to": "24:00"
+              }
+            ]
+          }
+        },
+        "type": "branch"
+      },
+      {
+        "address_name": "Смоленская, 5",
+        "external_content": [
+          {
+            "count": 73,
+            "main_photo_url": "https://i0.photo.2gis.com/main/branch/32/4504127908381434/common",
+            "subtype": "common",
+            "type": "photo_album"
+          },
+          {
+            "count": 6,
+            "main_photo_url": "http://i2.photo.2gis.com/main/geo/32/4504235282738422/view",
+            "subtype": "view",
+            "type": "photo_album"
+          }
+        ],
+        "id": "4504127908381434",
+        "name": "Золотое кольцо, отель",
+        "point": {
+          "lat": 55.745498,
+          "lon": 37.580542
+        },
+        "reviews": {
+          "general_rating": 4.7,
+          "general_review_count": 18,
+          "is_reviewable": true,
+          "is_reviewable_on_flamp": true,
+          "items": [
+            {
+              "is_reviewable": true,
+              "tag": "2gis_reviews"
+            },
+            {
+              "is_reviewable": true,
+              "rating": 5,
+              "recommendation_count": 5,
+              "review_count": 8,
+              "tag": "flamp"
+            }
+          ],
+          "org_rating": 4.7,
+          "org_review_count": 18,
+          "rating": 5,
+          "recommendation_count": 5,
+          "review_count": 8
+        },
+        "schedule": {
+          "Fri": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Mon": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Sat": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Sun": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Thu": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Tue": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "Wed": {
+            "working_hours": [
+              {
+                "from": "00:00",
+                "to": "24:00"
+              }
+            ]
+          },
+          "is_24x7": true
+        },
+        "type": "branch"
+      }
+    ],
+    "total": 249
+  }
+}

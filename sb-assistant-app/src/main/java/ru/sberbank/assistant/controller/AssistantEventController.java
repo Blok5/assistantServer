@@ -18,13 +18,13 @@ import java.util.List;
 
 @RestController
 @Api(value = "Operations with events")
-@RequestMapping(path = "api/v1")
-public class AssistantController {
+@RequestMapping(path = "api/event/v1")
+public class AssistantEventController {
 
     private final KudagoCache kudagoCache;
 
     @Autowired
-    public AssistantController(KudagoCache kudagoCache) {
+    public AssistantEventController(KudagoCache kudagoCache) {
         this.kudagoCache = kudagoCache;
     }
 

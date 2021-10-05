@@ -14,6 +14,7 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.servlet.config.annotation.*;
 import ru.sberbank.assistant.converter.StringToKudagoCategoryConverter;
 import ru.sberbank.assistant.converter.StringToKudagoLocationConverter;
+import ru.sberbank.assistant.converter.StringToPlaceTypeConverter;
 
 import java.util.Arrays;
 import java.util.List;
@@ -40,6 +41,7 @@ public class WebApplicationConfig implements WebMvcConfigurer {
     public void addFormatters(FormatterRegistry registry) {
         registry.addConverter(new StringToKudagoLocationConverter());
         registry.addConverter(new StringToKudagoCategoryConverter());
+        registry.addConverter(new StringToPlaceTypeConverter());
     }
 
 
