@@ -3,6 +3,10 @@ package ru.sberbank.assistant.controller;
 import com.sb.api.kudago.model.event.Event;
 import com.sb.api.kudago.model.ref.Category;
 import com.sb.api.kudago.model.ref.Location;
+import doublegis.client.DoubleGisClient;
+import doublegis.model.place.Point;
+import doublegis.model.route.RouteCharacteristic;
+import doublegis.model.route.RouteCharacteristicResp;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -13,8 +17,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.sberbank.assistant.component.KudagoCache;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @Api(value = "Operations with events")
@@ -22,16 +28,28 @@ import java.util.List;
 public class AssistantEventController {
 
     private final KudagoCache kudagoCache;
+    private final DoubleGisClient doubleGisClient;
 
     @Autowired
-    public AssistantEventController(KudagoCache kudagoCache) {
+    public AssistantEventController(KudagoCache kudagoCache,DoubleGisClient doubleGisClient) {
         this.kudagoCache = kudagoCache;
+        this.doubleGisClient = doubleGisClient;
     }
 
     @ApiOperation(value = "Test the api application is working correctly")
     @GetMapping(value = "/hello")
     public String sayHello() {
         return "Hello World";
+    }
+
+    @ApiOperation(value = "Test the api application is working correctly")
+    @GetMapping(value = "/testGoogle")
+    public List<Map<String, RouteCharacteristicResp>> testGoogle() {
+        List <Point> points=new ArrayList<>();
+        points.add(new Point(55.546975,37.4730373));
+        points.add(new Point(55.78139299999999,37.598528));
+        points.add(new Point(55.83273199999982,37.61831599999973));
+        return doubleGisClient.getDistance(points);
     }
 
     @ApiOperation(value = "Get allowed values for enums")

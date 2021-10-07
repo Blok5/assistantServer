@@ -9,8 +9,14 @@ import java.io.Serializable;
 public class Point implements Serializable {
     private double lat;
     private double lon;
+    public Point (double lat, double lon){
+        this.lat=lat;
+        this.lon=lon;
+    }
 
-
+    public String getTextView(){
+        return lat +","+lon;
+    }
     public double getLat() {
         return lat;
     }
