@@ -22,11 +22,11 @@ public class RouteEventController {
 
     @ApiOperation(value = "Create new event for route and return updated route")
     @PostMapping
-    public void createEvent(
+    public Route createEvent(
             @RequestBody Event event,
             @RequestParam Long routeId
     ) {
-         eventService.createEventForRoute(event, routeId);
+         return eventService.createEventForRoute(event, routeId);
     }
 
     @ApiOperation(value = "Delete event by Id from route")

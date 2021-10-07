@@ -35,6 +35,14 @@ public class RouteController {
         return routeService.getRoutes();
     }
 
+    @ApiOperation(value = "Get route by Id")
+    @GetMapping(path = "{routeId}")
+    public Route getRouteById(
+            @PathVariable("routeId") Long routeId
+    ) {
+        return routeService.getRouteById(routeId);
+    }
+
     @ApiOperation(value = "Create new empty route")
     @PostMapping
     public Route createRoute() {

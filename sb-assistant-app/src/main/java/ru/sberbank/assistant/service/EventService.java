@@ -24,8 +24,8 @@ public class EventService {
      * @param routeId
      * @return
      */
-    public void createEventForRoute(Event event, Long routeId) {
-         routeService.addEvent(event, routeId);
+    public Route createEventForRoute(Event event, Long routeId) {
+         return routeService.addEvent(event, routeId);
     }
 
     /**

@@ -26,6 +26,16 @@ public class RouteService {
     public List<Route> getRoutes() {
         return routeRepository.findAll();
     }
+    /**
+     *
+     * @return
+     */
+    public Route getRouteById(Long routeId) {
+        Route route = routeRepository.findById(routeId)
+                .orElseThrow(() -> new IllegalStateException(
+                        "route with id " + routeId + " doesnt exist"));
+        return route;
+    }
 
     /**
      *
@@ -60,12 +70,13 @@ public class RouteService {
      * @param routeId
      */
     @Transactional
-    public void addEvent(Event event, Long routeId) {
+    public Route addEvent(Event event, Long routeId) {
         Route route = routeRepository.findById(routeId)
                 .orElseThrow(() -> new IllegalStateException(
                         "route with id " + routeId + " doesnt exist"));
 
         route.addEvent(event);
+        return route;
     }
 
     /**
