@@ -9,9 +9,12 @@ import com.sb.api.kudago.model.ref.Category;
 import com.sb.api.kudago.model.ref.Location;
 
 import java.io.Serializable;
+import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Event implements Serializable {
@@ -192,5 +195,27 @@ public class Event implements Serializable {
 
     public void setPlace(Place place) {
         this.place = place;
+    }
+
+    public EventDate getFirstDateAfterToday(){
+        if(dates==null){
+            return null;
+        }
+        long todayUnix=new Date().getTime()/1000L;
+        for(EventDate eventDate: dates){
+            if(Long.parseLong(eventDate.getEndPlain())>=todayUnix
+                    && (Long.parseLong(eventDate.getStartPlain())>=todayUnix ||
+                    (LocalDateTime.ofInstant(Instant.ofEpochSecond(Long.parseLong(eventDate.getStartPlain())),
+                            TimeZone.getDefault().toZoneId()).getDayOfMonth()!=
+                            LocalDateTime.ofInstant(Instant.ofEpochSecond(Long.parseLong(eventDate.getEndPlain())),
+                                    TimeZone.getDefault().toZoneId()).getDayOfMonth() ||
+                            LocalDateTime.ofInstant(Instant.ofEpochSecond(Long.parseLong(eventDate.getStartPlain())),
+                                    TimeZone.getDefault().toZoneId()).getMonthValue()!=
+                                    LocalDateTime.ofInstant(Instant.ofEpochSecond(Long.parseLong(eventDate.getEndPlain())),
+                                            TimeZone.getDefault().toZoneId()).getMonthValue()))){
+                return eventDate;
+            }
+        }
+        return null;
     }
 }

@@ -6,6 +6,7 @@ import com.sb.api.kudago.model.ref.Category;
 import com.sb.api.kudago.model.ref.Location;
 import org.springframework.stereotype.Component;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
@@ -47,6 +48,11 @@ public class KudagoCache {
 
     public Event lucky(){
         if(hasCache()){
+            Date today= new Date();
+            Calendar c= Calendar.getInstance();
+            c.setTime(today);
+            c.add(Calendar.DATE,7);
+            eventCurrentList.stream().filter(p -> p.applyFilters(today, c.getTime(), null, "", null)).collect(Collectors.toCollection(CopyOnWriteArrayList::new));
             double luckyPos= Math.random()*eventCurrentList.size();
             return eventCurrentList.get((int) luckyPos);
         }

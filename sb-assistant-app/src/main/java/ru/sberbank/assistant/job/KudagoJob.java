@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 import org.yaml.snakeyaml.error.Mark;
 import ru.sberbank.assistant.component.KudagoCache;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
@@ -29,7 +30,11 @@ public class KudagoJob implements Job {
 
     public void execute(JobExecutionContext context) throws JobExecutionException {
         logger.warn("Kudago cache start getting...");
-        SearchEventResponse response=kudagoClient.getEventList(new Date(),null, Location.MSK.getApiVal(),"", "",100);
+        Date today=new Date();
+        Calendar c= Calendar.getInstance();
+        c.setTime(today);
+        c.add(Calendar.DATE,7);
+        SearchEventResponse response=kudagoClient.getEventList(today,c.getTime(), Location.MSK.getApiVal(),"", "",100);
         if(response!=null && response.getResults()!=null){
                 while(response.getNext()!=null && !response.getNext().equals("")){
 

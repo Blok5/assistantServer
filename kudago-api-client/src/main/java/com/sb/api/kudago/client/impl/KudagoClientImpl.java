@@ -11,6 +11,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -128,7 +129,10 @@ public class KudagoClientImpl implements KudagoClient {
     public Event lucky() {
         Event result=null;
         Date today= new Date();
-        SearchEventResponse response=getEventList(today,today,"msk","","",20);
+        Calendar c= Calendar.getInstance();
+        c.setTime(today);
+        c.add(Calendar.DATE,7);
+        SearchEventResponse response=getEventList(today,c.getTime(),"msk","","",20);
         if(response!=null && response.getCount()>0){
             int maxSize= Math.min(response.getCount(), 20);
             double luckyPos= Math.random()*maxSize;

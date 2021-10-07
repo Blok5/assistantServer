@@ -1,5 +1,6 @@
 package ru.sberbank.assistant.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import ru.sberbank.assistant.ref.Source;
 
 import javax.persistence.*;
@@ -48,6 +49,11 @@ public class Place {
     )
     private double lon;
 
+    @Column(
+            name = "address"
+    )
+    private String address;
+
     public Place(Long externalId, Source source) {
         this.externalId = externalId;
         this.source = source;
@@ -56,10 +62,20 @@ public class Place {
     public Place() {
     }
 
+    private Place(Builder builder) {
+        setId(builder.id);
+        setExternalId(builder.externalId);
+        setSource(builder.source);
+        setLat(builder.lat);
+        setLon(builder.lon);
+        setAddress(builder.address);
+    }
+
     public Long getId() {
         return id;
     }
 
+    @JsonIgnore
     public void setId(Long id) {
         this.id = id;
     }
@@ -103,5 +119,59 @@ public class Place {
 
     public void setLon(double lon) {
         this.lon = lon;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public static final class Builder {
+        private Long id;
+        private Long externalId;
+        private Source source;
+        private double lat;
+        private double lon;
+        private String address;
+
+        public Builder() {
+        }
+
+        public Builder id(Long val) {
+            id = val;
+            return this;
+        }
+
+        public Builder externalId(Long val) {
+            externalId = val;
+            return this;
+        }
+
+        public Builder source(Source val) {
+            source = val;
+            return this;
+        }
+
+        public Builder lat(double val) {
+            lat = val;
+            return this;
+        }
+
+        public Builder lon(double val) {
+            lon = val;
+            return this;
+        }
+
+        public Builder address(String val) {
+            address = val;
+            return this;
+        }
+
+        public Place build() {
+            return new Place(this);
+        }
     }
 }

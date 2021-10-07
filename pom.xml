@@ -5,7 +5,7 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>sb-assistant-front-app</module>
+<!--		<module>sb-assistant-front-app</module>-->
 		<module>kudago-api-client</module>
 		<module>2gis-api-client</module>
 		<module>sb-assistant-app</module>

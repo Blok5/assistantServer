@@ -5,7 +5,6 @@ import com.sb.api.kudago.model.ref.Category;
 import com.sb.api.kudago.model.ref.Location;
 import doublegis.client.DoubleGisClient;
 import doublegis.model.place.Point;
-import doublegis.model.route.RouteCharacteristic;
 import doublegis.model.route.RouteCharacteristicResp;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -16,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.sberbank.assistant.component.KudagoCache;
+import ru.sberbank.assistant.converter.EventToRouteEventConverter;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -29,11 +29,13 @@ public class AssistantEventController {
 
     private final KudagoCache kudagoCache;
     private final DoubleGisClient doubleGisClient;
+    private final EventToRouteEventConverter eventToRouteEventConverter;
 
     @Autowired
-    public AssistantEventController(KudagoCache kudagoCache,DoubleGisClient doubleGisClient) {
+    public AssistantEventController(KudagoCache kudagoCache, DoubleGisClient doubleGisClient, EventToRouteEventConverter eventToRouteEventConverter) {
         this.kudagoCache = kudagoCache;
         this.doubleGisClient = doubleGisClient;
+        this.eventToRouteEventConverter = eventToRouteEventConverter;
     }
 
     @ApiOperation(value = "Test the api application is working correctly")
@@ -61,9 +63,12 @@ public class AssistantEventController {
 
     @ApiOperation(value = "Get random today event if you are lucky")
     @GetMapping(value = "/lucky", produces = "application/json;charset=UTF-8")
-    public Event getLuckyEvent() {
-
-            return kudagoCache.lucky();
+    public ru.sberbank.assistant.model.Event getLuckyEvent() {
+        Event event=kudagoCache.lucky();
+        if(event!=null){
+            return eventToRouteEventConverter.convert(event);
+        }
+            return null;
 
     }
 
