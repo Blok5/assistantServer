@@ -5,6 +5,7 @@ import com.sb.api.kudago.model.event.EventDate;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 import ru.sberbank.assistant.model.Place;
+import ru.sberbank.assistant.ref.EventType;
 import ru.sberbank.assistant.ref.Source;
 
 import java.time.Instant;
@@ -19,7 +20,12 @@ public class EventToRouteEventConverter implements Converter<Event, ru.sberbank.
     @Override
     public ru.sberbank.assistant.model.Event convert(Event event) {
         EventDate date=event.getFirstDateAfterToday();
+        EventType type=null;
+        if(event.getCategoryList()!=null && event.getCategoryList().size()>0){
+            type=EventType.fromApiVal(event.getCategoryList().get(0).getApiVal());
+        }
         return new ru.sberbank.assistant.model.Event.Builder()
+                .type(type)
                 .dateStart((event.getDates()!=null&& event.getDates().length>0)?
                         LocalDateTime.ofInstant(Instant.ofEpochSecond(Long.parseLong(date.getStart())),
                                 TimeZone.getDefault().toZoneId()):null)
