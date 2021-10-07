@@ -25,6 +25,7 @@ public class EventToRouteEventConverter implements Converter<Event, ru.sberbank.
             type=EventType.fromApiVal(event.getCategoryList().get(0).getApiVal());
         }
         return new ru.sberbank.assistant.model.Event.Builder()
+                .description(event.getDescription())
                 .type(type)
                 .dateStart((event.getDates()!=null&& event.getDates().length>0)?
                         LocalDateTime.ofInstant(Instant.ofEpochSecond(Long.parseLong(date.getStart())),

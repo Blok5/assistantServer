@@ -1,27 +1,19 @@
 package ru.sberbank.assistant.controller;
 
-import doublegis.client.DoubleGisClient;
-import doublegis.model.place.Place;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.sberbank.assistant.model.pulse.*;
-import ru.sberbank.assistant.ref.PlaceType;
 
 import javax.annotation.PostConstruct;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 @RestController
@@ -39,9 +31,14 @@ public class StubThirdpartyController {
 
     @PostConstruct
     private void postConstruct() {
-        url = "http://" + InetAddress.getLoopbackAddress().getHostName() + ":" +
-                environment.getProperty("server.port") +
-                environment.getProperty("server.servlet.context-path") + "/images";
+
+        try {
+            url = "http://" + InetAddress.getLocalHost().getHostName() + ":" +
+                    environment.getProperty("server.port") +
+                    environment.getProperty("server.servlet.context-path") + "/images";
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
     }
 
     @ApiOperation(value = "Get tasks from pulse", produces = "application/json;charset=UTF-8")

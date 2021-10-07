@@ -38,6 +38,7 @@ public class Event {
     @Column(
             name = "description"
     )
+    @Lob
     private String description;
 
     @Column(
