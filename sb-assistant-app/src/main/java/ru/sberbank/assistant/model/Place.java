@@ -38,6 +38,16 @@ public class Place {
     )
     private Source source;
 
+    @Column(
+            name = "lat"
+    )
+    private double lat;
+
+    @Column(
+            name = "lon"
+    )
+    private double lon;
+
     public Place(Long externalId, Source source) {
         this.externalId = externalId;
         this.source = source;
@@ -77,5 +87,21 @@ public class Place {
                 ", externalId=" + externalId +
                 ", source=" + source +
                 '}';
+    }
+
+    public double getLat() {
+        return lat;
+    }
+
+    public void setLat(double lat) {
+        this.lat = lat;
+    }
+
+    public double getLon() {
+        return lon;
+    }
+
+    public void setLon(double lon) {
+        this.lon = lon;
     }
 }

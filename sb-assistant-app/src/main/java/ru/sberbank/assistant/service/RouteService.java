@@ -25,6 +25,13 @@ public class RouteService {
         return routeRepository.save(new Route());
     }
 
+    public Route getRoutById(Long id) {
+        if(!routeRepository.existsById(id)){
+            return null;
+        }
+        return routeRepository.getById(id);
+    }
+
     public void deleteRoute(Long routeId) {
         boolean exist = routeRepository.existsById(routeId);
 
