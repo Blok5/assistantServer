@@ -2,15 +2,13 @@ package ru.sberbank.assistant.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.sberbank.assistant.model.pulse.*;
 
-import javax.annotation.PostConstruct;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -21,25 +19,20 @@ import java.util.List;
 @RequestMapping(path = "api/stub/v1")
 public class StubThirdpartyController {
 
-
     private String url;
-    private final Environment environment;
 
     public StubThirdpartyController(Environment environment) {
-        this.environment = environment;
+        url=environment.getProperty("sb.assistant.url")+":8080/assistant/images";
     }
 
-    @PostConstruct
-    private void postConstruct() {
-
-        try {
-            url = "http://" + InetAddress.getLocalHost().getHostName() + ":" +
-                    environment.getProperty("server.port") +
-                    environment.getProperty("server.servlet.context-path") + "/images";
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
-    }
+//    @PostConstruct
+//    private void postConstruct() {
+//
+//
+//        url = "http://" + InetAddress.getLoopbackAddress().getHostName() + ":" +
+//                environment.getProperty("server.port") +
+//                environment.getProperty("server.servlet.context-path") + "/images";
+//    }
 
     @ApiOperation(value = "Get tasks from pulse", produces = "application/json;charset=UTF-8")
     @GetMapping(value = "/pulse/my-tasks")
