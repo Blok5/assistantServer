@@ -42,9 +42,9 @@ public class RouteEventController {
         if(places!=null && places.size()>0) {
             Event eventRoute =placeToRouteEventConverter.convert(places.get(0));
             if(eventRoute!=null) {
-                eventRoute.setDateStart(event.getDateEnd().plusHours(2));
+                eventRoute.setDateStart(event.getDateEnd().plusHours(1));
                 eventRoute.setDateEnd(eventRoute.getDateStart().plusHours(2));
-                route.addEvent(eventRoute);
+                eventService.createEventForRoute(eventRoute, routeId);
             }
         }
          return route;

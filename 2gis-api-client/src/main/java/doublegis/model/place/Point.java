@@ -9,6 +9,9 @@ import java.io.Serializable;
 public class Point implements Serializable {
     private double lat;
     private double lon;
+
+    public Point(){}
+
     public Point (double lat, double lon){
         this.lat=lat;
         this.lon=lon;

@@ -47,14 +47,14 @@ public class DoubleGisClientImpl implements DoubleGisClient {
         if(radius!=null){
             radiusString=radius.toString();
         }
-        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(url + "3.0/items")
+        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(url + "/3.0/items")
                 .queryParam("q",query)
                 .queryParam("point",coordString)
                 .queryParam("radius",radiusString)
                 .queryParam("region_id",32)
                 .queryParam("has_photos",true)
                 .queryParam("has_rating",true)
-                .queryParam("sort","rating")
+                .queryParam("sort","flamp_rating")
                 .queryParam("fields","items.point,items.delivery,items.reviews,items.schedule,items.external_content")
                 .queryParam("key",key);
         List<Place> result=null;
