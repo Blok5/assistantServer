@@ -110,6 +110,7 @@ public class StubThirdpartyController {
                 .numOfViews(27)
                 .imageUrl(url + "/js.jpg")
                 .courseUrl("")
+                .knowledgeFor("")
                 .build());
 
         growthPulses.add(new GrowthPulse.Builder()
@@ -122,6 +123,7 @@ public class StubThirdpartyController {
                 .numOfViews(833)
                 .imageUrl(url + "/java.jpg")
                 .courseUrl("")
+                .knowledgeFor("")
                 .build());
 
         return growthPulses;

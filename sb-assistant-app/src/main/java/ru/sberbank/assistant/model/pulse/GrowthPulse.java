@@ -10,6 +10,7 @@ public class GrowthPulse {
     private int numOfViews;
     private String imageUrl;
     private String courseUrl;
+    private String knowledgeFor;
 
     private GrowthPulse(Builder builder) {
         setName(builder.name);
@@ -21,6 +22,7 @@ public class GrowthPulse {
         setNumOfViews(builder.numOfViews);
         setImageUrl(builder.imageUrl);
         setCourseUrl(builder.courseUrl);
+        setKnowledgeFor(builder.knowledgeFor);
     }
 
     public String getName() {
@@ -95,6 +97,14 @@ public class GrowthPulse {
         this.courseUrl = courseUrl;
     }
 
+    public String getKnowledgeFor() {
+        return knowledgeFor;
+    }
+
+    public void setKnowledgeFor(String knowledgeFor) {
+        this.knowledgeFor = knowledgeFor;
+    }
+
     public static final class Builder {
         private String name;
         private String description;
@@ -105,6 +115,7 @@ public class GrowthPulse {
         private int numOfViews;
         private String imageUrl;
         private String courseUrl;
+        private String knowledgeFor;
 
         public Builder() {
         }
@@ -156,6 +167,11 @@ public class GrowthPulse {
 
         public Builder courseUrl(String val) {
             courseUrl = val;
+            return this;
+        }
+
+        public Builder knowledgeFor(String val) {
+            knowledgeFor = val;
             return this;
         }
 
