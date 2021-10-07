@@ -36,9 +36,10 @@ public class Event {
     private String name;
 
     @Column(
-            name = "description"
+            name = "description",
+            columnDefinition = "TEXT"
     )
-    @Lob
+
     private String description;
 
     @Column(
