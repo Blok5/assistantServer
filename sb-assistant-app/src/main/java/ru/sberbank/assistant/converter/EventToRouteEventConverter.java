@@ -10,6 +10,7 @@ import ru.sberbank.assistant.ref.Source;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
+import java.util.Random;
 import java.util.TimeZone;
 
 @Component
@@ -24,7 +25,13 @@ public class EventToRouteEventConverter implements Converter<Event, ru.sberbank.
         if(event.getCategoryList()!=null && event.getCategoryList().size()>0){
             type=EventType.fromApiVal(event.getCategoryList().get(0).getApiVal());
         }
+
+        Random random=new Random();
+        double rating=Double.parseDouble(String.format("%.1f",4d + (random.nextDouble() * (1))).replace(",","."));
+
+
         return new ru.sberbank.assistant.model.Event.Builder()
+                .rating(rating)
                 .description(event.getDescription())
                 .type(type)
                 .dateStart((event.getDates()!=null&& event.getDates().length>0)?

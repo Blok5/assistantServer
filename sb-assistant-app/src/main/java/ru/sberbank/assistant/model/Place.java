@@ -54,6 +54,7 @@ public class Place {
     )
     private String address;
 
+
     public Place(Long externalId, Source source) {
         this.externalId = externalId;
         this.source = source;
@@ -129,6 +130,7 @@ public class Place {
         this.address = address;
     }
 
+
     public static final class Builder {
         private Long id;
         private Long externalId;
@@ -169,6 +171,7 @@ public class Place {
             address = val;
             return this;
         }
+
 
         public Place build() {
             return new Place(this);
