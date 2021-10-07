@@ -109,6 +109,7 @@ public class StubThirdpartyController {
                 .rating(4.7d)
                 .numOfViews(27)
                 .imageUrl(url + "/js.jpg")
+                .courseUrl("")
                 .build());
 
         growthPulses.add(new GrowthPulse.Builder()
@@ -120,6 +121,7 @@ public class StubThirdpartyController {
                 .rating(4.9d)
                 .numOfViews(833)
                 .imageUrl(url + "/java.jpg")
+                .courseUrl("")
                 .build());
 
         return growthPulses;
