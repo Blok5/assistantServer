@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.sberbank.assistant.model.Event;
+import ru.sberbank.assistant.model.Route;
 import ru.sberbank.assistant.service.EventService;
 
 @RestController
@@ -19,17 +20,21 @@ public class RouteEventController {
         this.eventService = eventService;
     }
 
-    @ApiOperation(value = "Create new event for route")
+    @ApiOperation(value = "Create new event for route and return updated route")
     @PostMapping
-    public Event createEvent(@RequestBody Event event, @RequestParam Long routeId) {
-        return eventService.createEventForRoute(event, routeId);
+    public void createEvent(
+            @RequestBody Event event,
+            @RequestParam Long routeId
+    ) {
+         eventService.createEventForRoute(event, routeId);
     }
 
-    @ApiOperation(value = "Delete event by Id")
+    @ApiOperation(value = "Delete event by Id from route")
     @DeleteMapping(path = "{eventId}")
-    public void deleteEvent(
-            @PathVariable("eventId") Long eventId
+    public Route deleteEvent(
+            @PathVariable("eventId") Long eventId,
+            @RequestParam Long routeId
     ) {
-        eventService.deleteEvent(eventId);
+        return eventService.deleteEventFromRoute(eventId, routeId);
     }
 }

@@ -3,30 +3,47 @@ package ru.sberbank.assistant.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.sberbank.assistant.model.Event;
+import ru.sberbank.assistant.model.Route;
 import ru.sberbank.assistant.repository.EventRepository;
 
 @Service
 public class EventService {
 
     private final EventRepository eventRepository;
+    private final RouteService routeService;
 
     @Autowired
-    public EventService(EventRepository eventRepository) {
+    public EventService(EventRepository eventRepository, RouteService routeService) {
         this.eventRepository = eventRepository;
+        this.routeService = routeService;
     }
 
-    public Event createEventForRoute(Event event, Long routeId) {
-        return eventRepository.save(event);
+    /**
+     *
+     * @param event
+     * @param routeId
+     * @return
+     */
+    public void createEventForRoute(Event event, Long routeId) {
+         routeService.addEvent(event, routeId);
     }
 
-    public void deleteEvent(Long eventId) {
-        boolean exist = eventRepository.existsById(eventId);
+    /**
+     *
+     * @param eventId
+     * @param routeId
+     */
+    public Route deleteEventFromRoute(Long eventId, Long routeId) {
+        Event event = getEventById(eventId);
+        return routeService.deleteEvent(event, routeId);
+    }
 
-        if (!exist) {
-            throw new IllegalStateException("event with id " + eventId + " doesnt exist");
-        }
+    public Event getEventById(Long eventId) {
+        Event event = eventRepository.findById(eventId)
+                .orElseThrow(() -> new IllegalStateException(
+                        "route with id " + eventId + " doesnt exist"));
 
-        eventRepository.deleteById(eventId);
+        return event;
     }
 }
 

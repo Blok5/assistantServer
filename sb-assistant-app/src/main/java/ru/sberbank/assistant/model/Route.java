@@ -2,6 +2,7 @@ package ru.sberbank.assistant.model;
 
 import javax.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static javax.persistence.GenerationType.SEQUENCE;
@@ -27,17 +28,32 @@ public class Route {
     private Long id;
 
     @OneToMany(
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
+            mappedBy = "route",
+            orphanRemoval = true,
+            cascade = CascadeType.ALL
     )
-    @JoinColumn(
-            name = "event_id",
-            foreignKey = @ForeignKey(
-                    name = "FK_event_route"
-            )
+    private List<Event> eventList = new ArrayList<>();
 
-    )
-    private List<Event> eventList;
+    public void addEvent(Event event) {
+        addEvent(event, true);
+    }
+
+    public void addEvent(Event event, boolean set) {
+        if (getEventList().contains(event)) {
+            getEventList().set(getEventList().indexOf(event), event);
+        } else {
+            getEventList().add(event);
+        }
+        if (set) {
+            event.setRoute(this, false);
+        }
+
+    }
+
+    public void removeEvent(Event event) {
+        getEventList().remove(event);
+        event.setRoute(null, false);
+    }
 
     public Route() {
     }
@@ -60,6 +76,12 @@ public class Route {
 
     public void setEventList(List<Event> eventList) {
         this.eventList = eventList;
+    }
+
+
+    public void removeEventById(Long eventId) {
+        this.eventList.removeIf(
+                event -> event.getId().equals(eventId));
     }
 
     @Override

@@ -1,5 +1,6 @@
 package ru.sberbank.assistant.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import ru.sberbank.assistant.ref.EventType;
 import ru.sberbank.assistant.ref.Source;
 
@@ -31,47 +32,69 @@ public class Event {
 
     @Column(
             name = "external_id",
+            nullable = false,
             columnDefinition = "TEXT"
     )
     private Long externalId;
 
     @Column(
             name = "source",
+            nullable = false,
             columnDefinition = "TEXT"
     )
     private Source source;
 
     @Column(
             name = "type",
+            nullable = false,
             columnDefinition = "TEXT"
     )
     private EventType type;
 
     @Column(
             name = "date_start",
+            nullable = false,
             columnDefinition = "TIMESTAMP WITHOUT TIME ZONE"
     )
     private LocalDateTime dateStart;
 
     @Column(
             name = "date_end",
+            nullable = false,
             columnDefinition = "TIMESTAMP WITHOUT TIME ZONE"
     )
     private LocalDateTime dateEnd;
 
-    @OneToOne(
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
-    )
+    @ManyToOne
     @JoinColumn(
-            name = "place_id",
-            foreignKey = @ForeignKey(
-                    name = "FK_place_event"
-            )
+            name = "route_id",
+            foreignKey = @ForeignKey(name = "FK_event_route")
+    )
+    private Route route;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(
+            name = "place_id"
     )
     private Place place;
 
     public Event() {
+    }
+
+    public Event(Long externalId,
+                 Source source,
+                 EventType type,
+                 LocalDateTime dateStart,
+                 LocalDateTime dateEnd,
+                 Route route,
+                 Place place) {
+        this.externalId = externalId;
+        this.source = source;
+        this.type = type;
+        this.dateStart = dateStart;
+        this.dateEnd = dateEnd;
+        this.route = route;
+        this.place = place;
     }
 
     public Long getId() {
@@ -122,11 +145,40 @@ public class Event {
         this.dateEnd = dateEnd;
     }
 
+    public void setRoute(Route route) {
+        setRoute(route, true);
+    }
+
+    public void setRoute(Route route, boolean add) {
+        this.route = route;
+        if (route != null && add)  {
+            route.addEvent(this, false);
+        }
+    }
+
+    @JsonIgnore
+    public Route getRoute() {
+        return route;
+    }
+
     public Place getPlace() {
         return place;
     }
 
     public void setPlace(Place place) {
         this.place = place;
+    }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "id=" + id +
+                ", externalId=" + externalId +
+                ", source=" + source +
+                ", type=" + type +
+                ", dateStart=" + dateStart +
+                ", dateEnd=" + dateEnd +
+                ", route=" + route +
+                '}';
     }
 }
