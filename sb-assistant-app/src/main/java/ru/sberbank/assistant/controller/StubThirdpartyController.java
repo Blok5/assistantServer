@@ -264,7 +264,7 @@ public class StubThirdpartyController {
                 .duration(0)
                 .rating(4.8d)
                 .numOfViews(2419)
-                .imageUrl(url + "/betterParent.jpeg")
+                .imageUrl(url + "/betterParent1.png")
                 .courseUrl("https://www.sbidea.ru/self-realization#parents\n")
                 .knowledgeFor("Зачем это мне?\n" +
                         "Сбер поддерживает сотрудников в разных ролях, и с особым вниманием мы относимся к нашим сотрудникам-родителям и тем, кто готовится ими стать. Семья, родительство, партнеры, дети, близкие, друзья – это то, что объединяет многих из нас и важно для каждого, ведь социальные связи и личные отношения - один из пяти элементов благополучия.\n" +
@@ -315,7 +315,7 @@ public class StubThirdpartyController {
                 .duration(0)
                 .rating(4.6d)
                 .numOfViews(2419)
-                .imageUrl(url + "/cityMobil.jpeg")
+                .imageUrl(url + "/cityMobil.png")
                 .courseUrl("https://sbidea.ru/improject-429085")
                 .knowledgeFor("Если вы знаете, как закрыть конкретную «боль» клиента – скорее пишите нам.\n" +
                         "Важно не только предлагать свои идеи, но и поддерживать отличные идеи коллег: лайкайте другие предложения - вам несложно, коллегам приятно, а продукту понятно, что идея – топчик\uD83D\uDE0E.\n" +
@@ -349,7 +349,7 @@ public class StubThirdpartyController {
                 .duration(0)
                 .rating(4.6d)
                 .numOfViews(2419)
-                .imageUrl(url + "/sberHealth.jpeg")
+                .imageUrl(url + "/sberHealth.png")
                 .courseUrl("https://sbidea.ru/improject-429082")
                 .knowledgeFor("Если вы знаете, как закрыть конкретную «боль» клиента – скорее пишите нам.\n" +
                         "Важно не только предлагать свои идеи, но и поддерживать отличные идеи коллег: лайкайте другие предложения - вам несложно, коллегам приятно, а продукту понятно, что идея – топчик\uD83D\uDE0E.\n" +
@@ -366,7 +366,7 @@ public class StubThirdpartyController {
                 .duration(0)
                 .rating(4.6d)
                 .numOfViews(2419)
-                .imageUrl(url + "/sberSound.jpeg")
+                .imageUrl(url + "/sberSound.png")
                 .courseUrl("https://sbidea.ru/improject-429084")
                 .knowledgeFor("Если вы знаете, как закрыть конкретную «боль» клиента – скорее пишите нам.\n" +
                         "Важно не только предлагать свои идеи, но и поддерживать отличные идеи коллег: лайкайте другие предложения - вам несложно, коллегам приятно, а продукту понятно, что идея – топчик\uD83D\uDE0E.\n" +
