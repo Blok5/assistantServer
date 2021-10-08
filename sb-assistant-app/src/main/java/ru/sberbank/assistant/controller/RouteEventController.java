@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.sberbank.assistant.converter.PlaceToRouteEventConverter;
 import ru.sberbank.assistant.model.Event;
 import ru.sberbank.assistant.model.Route;
+import ru.sberbank.assistant.ref.PlaceType;
 import ru.sberbank.assistant.service.EventService;
 
 import java.io.IOException;
@@ -41,16 +42,16 @@ public class RouteEventController {
             @RequestParam Long routeId
     ) {
         Route route = eventService.createEventForRoute(event, routeId);
-//        List<Place> places=doubleGisClient.searchPlace(PlaceType.CAFE.getApiVal(),event.getPlace().getLon(),
-//                event.getPlace().getLat(),2000);
-        List<Place> places = new ArrayList<>();
-        ObjectMapper mapper = new ObjectMapper();
-        try {
-            SearchPlaceResponse placeResponse = mapper.readValue(ResourceUtils.getFile("classpath:gisApiExample.json"), SearchPlaceResponse.class);
-            places = placeResponse.getResult().getItems();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        List<Place> places=doubleGisClient.searchPlace(PlaceType.CAFE.getApiVal(),event.getPlace().getLon(),
+                event.getPlace().getLat(),2000);
+//        List<Place> places = new ArrayList<>();
+//        ObjectMapper mapper = new ObjectMapper();
+//        try {
+//            SearchPlaceResponse placeResponse = mapper.readValue(ResourceUtils.getFile("classpath:gisApiExample.json"), SearchPlaceResponse.class);
+//            places = placeResponse.getResult().getItems();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
         if (places != null && places.size() > 0) {
             Event eventRoute = placeToRouteEventConverter.convert(places.get(0));
             if (eventRoute != null) {
