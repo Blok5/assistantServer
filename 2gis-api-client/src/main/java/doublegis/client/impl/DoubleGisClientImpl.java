@@ -5,7 +5,6 @@ import doublegis.model.place.Place;
 import doublegis.model.place.Point;
 import doublegis.model.response.GetRouteResponse;
 import doublegis.model.response.SearchPlaceResponse;
-import doublegis.model.route.RouteCharacteristic;
 import doublegis.model.route.RouteCharacteristicResp;
 import doublegis.model.route.RoutePoint;
 import doublegis.model.route.RouteResult;
@@ -27,8 +26,8 @@ public class DoubleGisClientImpl implements DoubleGisClient {
 
 
     public DoubleGisClientImpl(
-        String url, String key,
-        RestTemplate doubleGisRestTemplate
+            String url, String key,
+            RestTemplate doubleGisRestTemplate
     ) {
         this.url = url;
         this.key = key;
@@ -39,30 +38,30 @@ public class DoubleGisClientImpl implements DoubleGisClient {
 
     @Override
     public List<Place> searchPlace(String query, Double lon, Double lat, Integer radius) {
-        String coordString="";
-        String radiusString="";
-        if(lon!=null && lat!=null){
-            coordString= lon +","+ lat;
+        String coordString = "";
+        String radiusString = "";
+        if (lon != null && lat != null) {
+            coordString = lon + "," + lat;
         }
-        if(radius!=null){
-            radiusString=radius.toString();
+        if (radius != null) {
+            radiusString = radius.toString();
         }
         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(url + "/3.0/items")
-                .queryParam("q",query)
-                .queryParam("point",coordString)
-                .queryParam("radius",radiusString)
-                .queryParam("region_id",32)
-                .queryParam("has_photos",true)
-                .queryParam("has_rating",true)
-                .queryParam("sort","flamp_rating")
-                .queryParam("fields","items.point,items.delivery,items.reviews,items.schedule,items.external_content")
-                .queryParam("key",key);
-        List<Place> result=null;
-        SearchPlaceResponse searchResponse=restTemplate.getForObject(
+                .queryParam("q", query)
+                .queryParam("point", coordString)
+                .queryParam("radius", radiusString)
+                .queryParam("region_id", 32)
+                .queryParam("has_photos", true)
+                .queryParam("has_rating", true)
+                .queryParam("sort", "flamp_rating")
+                .queryParam("fields", "items.point,items.delivery,items.reviews,items.schedule,items.external_content")
+                .queryParam("key", key);
+        List<Place> result = null;
+        SearchPlaceResponse searchResponse = restTemplate.getForObject(
                 builder.build().encode().toUri(), SearchPlaceResponse.class);
 
-        if(searchResponse!=null&& searchResponse.getResult()!=null){
-            result=searchResponse.getResult().getItems();
+        if (searchResponse != null && searchResponse.getResult() != null) {
+            result = searchResponse.getResult().getItems();
         }
 
         return result;
@@ -71,18 +70,18 @@ public class DoubleGisClientImpl implements DoubleGisClient {
     @Override
     public List<Map<String, RouteCharacteristicResp>> getDistance(List<Point> coords) {
         List<Map<String, RouteCharacteristicResp>> result = new ArrayList<>();
-        String [] types= {"DRIVING","WALKING","TRANSIT"};
-        StringBuilder distances=new StringBuilder();
-        StringBuilder origins= new StringBuilder();
-        for (int i=0; i< coords.size() - 1 ;i++){
-            Point p1= coords.get(i);
-            Point p2= coords.get(i+1);
+        String[] types = {"DRIVING", "WALKING", "TRANSIT"};
+        StringBuilder distances = new StringBuilder();
+        StringBuilder origins = new StringBuilder();
+        for (int i = 0; i < coords.size() - 1; i++) {
+            Point p1 = coords.get(i);
+            Point p2 = coords.get(i + 1);
             origins.append("|").append(p1.getTextView());
             distances.append("|").append(p2.getTextView());
             // создаем элемент на каждую пару по порядку
             result.add(new HashMap<>());
         }
-        for(String type: types) {
+        for (String type : types) {
             UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl("https://maps.googleapis.com/maps/api/distancematrix/json")
                     .queryParam("destinations", distances.substring(1))
                     .queryParam("origins", origins.substring(1))
@@ -92,7 +91,7 @@ public class DoubleGisClientImpl implements DoubleGisClient {
             GetRouteResponse searchResponse = restTemplate.getForObject(
                     builder.build().encode().toUri(), GetRouteResponse.class);
 
-            if (searchResponse != null ) {
+            if (searchResponse != null) {
                 if (searchResponse.getStatus().equals("OK")) {
                     //для каждой пары ищем соответствие в результате
                     for (int i = 0; i < result.size(); i++) {
@@ -103,12 +102,12 @@ public class DoubleGisClientImpl implements DoubleGisClient {
 
                                     RouteCharacteristicResp dist = new RouteCharacteristicResp();
                                     RoutePoint currentElem = row.getElements().get(i);
-                                    if(currentElem.getStatus().equals("OK")) {
+                                    if (currentElem.getStatus().equals("OK")) {
                                         dist.setDistance(currentElem.getDistance().getText());
                                         dist.setDistanceVal(currentElem.getDistance().getValue());
                                         dist.setDuration(currentElem.getDuration().getText());
                                         dist.setDurationVal(currentElem.getDuration().getValue());
-                                        if(type.equals("DRIVING")) {
+                                        if (type.equals("DRIVING")) {
                                             dist.setCost((int) (currentElem.getDuration().getValue() / 60 * 17));
                                         }
                                         result.get(i).put(type, dist);

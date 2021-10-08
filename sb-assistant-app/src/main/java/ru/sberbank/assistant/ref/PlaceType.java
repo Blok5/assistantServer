@@ -1,11 +1,11 @@
 package ru.sberbank.assistant.ref;
 
 public enum PlaceType {
-    CINEMA("cinema","Кинотеатр"),
-    CAFE("cafe-restaurant","Кафе рестораны"),
-    THEATER("theater","Театр"),
-    PUB("pub","Бар");
-//    ,
+    CINEMA("cinema", "Кинотеатр"),
+    CAFE("cafe-restaurant", "Кафе рестораны"),
+    THEATER("theater", "Театр"),
+    PUB("pub", "Бар");
+    //    ,
 //    EDUCATION("education"),
 //    ENTERTAINMENT("entertainment"),
 //    EXHIBITION("exhibition"),
@@ -20,7 +20,7 @@ public enum PlaceType {
     private String frontVal;
     private String apiVal;
 
-    private PlaceType(String frontVal,String apiVal) {
+    private PlaceType(String frontVal, String apiVal) {
         this.frontVal = frontVal;
         this.apiVal = apiVal;
     }
@@ -29,21 +29,21 @@ public enum PlaceType {
         return apiVal;
     }
 
-    public static PlaceType fromFrontVal(String frontVal){
-        for (PlaceType location: values()){
-            if(location.frontVal.equals(frontVal)){
+    public static PlaceType fromFrontVal(String frontVal) {
+        for (PlaceType location : values()) {
+            if (location.frontVal.equals(frontVal)) {
                 return location;
             }
         }
-        throw new IllegalArgumentException("Unknown category "+ frontVal);
+        throw new IllegalArgumentException("Unknown category " + frontVal);
     }
 
     //для генерации аннотации allowedValues
-    public static  String validValues() {
-        StringBuilder res= new StringBuilder();
+    public static String validValues() {
+        StringBuilder res = new StringBuilder();
         for (PlaceType location : values()) {
             res.append(location.frontVal).append(",");
         }
-        return res.substring(0,res.length()-1);
+        return res.substring(0, res.length() - 1);
     }
 }

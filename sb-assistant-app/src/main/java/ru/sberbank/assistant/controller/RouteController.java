@@ -60,20 +60,20 @@ public class RouteController {
     @ApiOperation(value = "Get distances for route events")
     @GetMapping(value = "/distance", produces = "application/json;charset=UTF-8")
     public List<Map<String, RouteCharacteristicResp>> getRouteDistances(
-            @RequestParam(name="routeId") Long routeId,
-            @RequestParam(name="currentLat") double currentLat,
-            @RequestParam(name="currentLon") double currentLon) {
+            @RequestParam(name = "routeId") Long routeId,
+            @RequestParam(name = "currentLat") double currentLat,
+            @RequestParam(name = "currentLon") double currentLon) {
 
-        Route route= routeService.getRoutById(routeId);
-        if(route == null){
+        Route route = routeService.getRoutById(routeId);
+        if (route == null) {
             return null;
         }
 
-        List <Point> coords= new ArrayList<>();
-        coords.add(new Point(currentLat,currentLon));
-        for(Event event:route.getEventList()){
-            if(event.getPlace()!=null){
-                coords.add(new Point(event.getPlace().getLat(),event.getPlace().getLon()));
+        List<Point> coords = new ArrayList<>();
+        coords.add(new Point(currentLat, currentLon));
+        for (Event event : route.getEventList()) {
+            if (event.getPlace() != null) {
+                coords.add(new Point(event.getPlace().getLat(), event.getPlace().getLon()));
             }
         }
 

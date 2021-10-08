@@ -1,7 +1,6 @@
 package doublegis.model.place;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
@@ -10,16 +9,18 @@ public class Point implements Serializable {
     private double lat;
     private double lon;
 
-    public Point(){}
-
-    public Point (double lat, double lon){
-        this.lat=lat;
-        this.lon=lon;
+    public Point() {
     }
 
-    public String getTextView(){
-        return lat +","+lon;
+    public Point(double lat, double lon) {
+        this.lat = lat;
+        this.lon = lon;
     }
+
+    public String getTextView() {
+        return lat + "," + lon;
+    }
+
     public double getLat() {
         return lat;
     }

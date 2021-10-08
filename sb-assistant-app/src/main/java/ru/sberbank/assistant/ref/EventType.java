@@ -1,7 +1,5 @@
 package ru.sberbank.assistant.ref;
 
-import com.sb.api.kudago.model.ref.Category;
-
 public enum EventType {
     CINEMA("cinema"),
     CONCERT("concert"),
@@ -31,6 +29,6 @@ public enum EventType {
                 return location;
             }
         }
-        throw new IllegalArgumentException("Unknown category "+ apiVal);
+        throw new IllegalArgumentException("Unknown category " + apiVal);
     }
 }

@@ -19,7 +19,9 @@ public class KudagoClientConfig {
 
     @Bean
     KudagoClient kudagoClient(
-        @Value("${sb.assistant.kudago.url}") String url,
-        @Qualifier("kudagoRestTemplate") RestTemplate kudagoRestTemplate
-    ) { return new KudagoClientImpl(url, kudagoRestTemplate); }
+            @Value("${sb.assistant.kudago.url}") String url,
+            @Qualifier("kudagoRestTemplate") RestTemplate kudagoRestTemplate
+    ) {
+        return new KudagoClientImpl(url, kudagoRestTemplate);
+    }
 }

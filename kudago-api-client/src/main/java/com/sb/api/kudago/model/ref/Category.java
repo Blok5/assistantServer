@@ -25,21 +25,21 @@ public enum Category {
         return apiVal;
     }
 
-    public static Category fromApiVal(String apiVal){
-        for (Category location: values()){
-            if(location.apiVal.equals(apiVal)){
+    public static Category fromApiVal(String apiVal) {
+        for (Category location : values()) {
+            if (location.apiVal.equals(apiVal)) {
                 return location;
             }
         }
-        throw new IllegalArgumentException("Unknown category "+ apiVal);
+        throw new IllegalArgumentException("Unknown category " + apiVal);
     }
 
     //для генерации аннотации allowedValues
-    public static  String validValues() {
-        StringBuilder res= new StringBuilder();
+    public static String validValues() {
+        StringBuilder res = new StringBuilder();
         for (Category location : values()) {
             res.append(location.apiVal).append(",");
         }
-        return res.substring(0,res.length()-1);
+        return res.substring(0, res.length() - 1);
     }
 }

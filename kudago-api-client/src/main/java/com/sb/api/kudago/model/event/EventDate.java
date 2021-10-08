@@ -13,13 +13,13 @@ public class EventDate implements Serializable {
 
     public String getStart() {
         Date today = new Date();
-        if(Long.parseLong(start)<today.getTime()/1000L){
-            Date roundToday= new Date(today.getYear(),today.getMonth(),today.getDate(),today.getHours()
-            , (today.getMinutes()/10)*10);
-            Calendar c=Calendar.getInstance();
+        if (Long.parseLong(start) < today.getTime() / 1000L) {
+            Date roundToday = new Date(today.getYear(), today.getMonth(), today.getDate(), today.getHours()
+                    , (today.getMinutes() / 10) * 10);
+            Calendar c = Calendar.getInstance();
             c.setTime(roundToday);
-            c.add(Calendar.HOUR,2);
-            return String.valueOf(c.getTime().getTime()/1000L);
+            c.add(Calendar.HOUR, 2);
+            return String.valueOf(c.getTime().getTime() / 1000L);
         }
         return start;
     }
@@ -38,24 +38,24 @@ public class EventDate implements Serializable {
 
     public String getEnd() {
 
-        Date todayStart=Date.from(Instant.ofEpochSecond(Long.parseLong(getStart())));
-        Calendar c=Calendar.getInstance();
+        Date todayStart = Date.from(Instant.ofEpochSecond(Long.parseLong(getStart())));
+        Calendar c = Calendar.getInstance();
         c.setTime(todayStart);
-        c.add(Calendar.HOUR,2);
+        c.add(Calendar.HOUR, 2);
 
-        if(LocalDateTime.ofInstant(Instant.ofEpochSecond(Long.parseLong(getStart())),
-                TimeZone.getDefault().toZoneId()).getDayOfMonth()!=
+        if (LocalDateTime.ofInstant(Instant.ofEpochSecond(Long.parseLong(getStart())),
+                TimeZone.getDefault().toZoneId()).getDayOfMonth() !=
                 LocalDateTime.ofInstant(Instant.ofEpochSecond(Long.parseLong(end)),
-                TimeZone.getDefault().toZoneId()).getDayOfMonth() ||
+                        TimeZone.getDefault().toZoneId()).getDayOfMonth() ||
                 LocalDateTime.ofInstant(Instant.ofEpochSecond(Long.parseLong(getStart())),
-                TimeZone.getDefault().toZoneId()).getMonthValue()!=
-                LocalDateTime.ofInstant(Instant.ofEpochSecond(Long.parseLong(end)),
-                        TimeZone.getDefault().toZoneId()).getMonthValue()){
+                        TimeZone.getDefault().toZoneId()).getMonthValue() !=
+                        LocalDateTime.ofInstant(Instant.ofEpochSecond(Long.parseLong(end)),
+                                TimeZone.getDefault().toZoneId()).getMonthValue()) {
 
-            return String.valueOf(c.getTime().getTime()/1000L);
-        }else{
-            if(start.equals(end)){
-                return String.valueOf(c.getTime().getTime()/1000L);
+            return String.valueOf(c.getTime().getTime() / 1000L);
+        } else {
+            if (start.equals(end)) {
+                return String.valueOf(c.getTime().getTime() / 1000L);
             }
         }
         return end;

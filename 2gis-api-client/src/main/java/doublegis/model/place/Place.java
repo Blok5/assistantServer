@@ -88,9 +88,9 @@ public class Place implements Serializable {
     }
 
     @JsonSetter("external_content")
-    public void deserializeImage(List<PlaceImage> source){
-        if(source!=null&& source.size()>0){
-            image=new PlaceImage();
+    public void deserializeImage(List<PlaceImage> source) {
+        if (source != null && source.size() > 0) {
+            image = new PlaceImage();
             image.setImageUrl(source.get(0).getImageUrl());
         }
     }

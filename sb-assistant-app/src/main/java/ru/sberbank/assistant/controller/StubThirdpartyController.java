@@ -2,7 +2,6 @@ package ru.sberbank.assistant.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +21,7 @@ public class StubThirdpartyController {
     private String url;
 
     public StubThirdpartyController(Environment environment) {
-        url=environment.getProperty("sb.assistant.url")+":8080/assistant/images";
+        url = environment.getProperty("sb.assistant.url") + ":8080/assistant/images";
     }
 
 //    @PostConstruct
@@ -150,12 +149,12 @@ public class StubThirdpartyController {
                                 .name("vk").build()}).build());
 
         profilePulses.add(new ProfilePulse.Builder()
-                    .name("Мегрим Абдула")
+                .name("Мегрим Абдула")
                 .address("Кутузовский проспект 32к1")
                 .imageUrl(url + "/abdula.jpg")
                 .dateOfBirth(LocalDate.of(1975, 4, 2))
                 .interests(new String[]{"поддержка АС", "путешествия"})
-                .skills(new String[]{"английский","общение с людьми"})
+                .skills(new String[]{"английский", "общение с людьми"})
                 .social(new SocialPulse[]{new SocialPulse.Builder()
                         .link("facebook.com/profile/123123")
                         .name("facebook").build(),
@@ -169,7 +168,7 @@ public class StubThirdpartyController {
                 .imageUrl(url + "/alexsei.jpg")
                 .dateOfBirth(LocalDate.of(1987, 4, 2))
                 .interests(new String[]{"программирование", "путешествия"})
-                .skills(new String[]{"java","общение с людьми"})
+                .skills(new String[]{"java", "общение с людьми"})
                 .social(new SocialPulse[]{new SocialPulse.Builder()
                         .link("facebook.com/profile/123123")
                         .name("facebook").build(),
@@ -183,7 +182,7 @@ public class StubThirdpartyController {
                 .imageUrl(url + "/ivan.jpg")
                 .dateOfBirth(LocalDate.of(1970, 4, 2))
                 .interests(new String[]{"управление людьми", "семья"})
-                .skills(new String[]{"английский","яхтинг"})
+                .skills(new String[]{"английский", "яхтинг"})
                 .social(new SocialPulse[]{new SocialPulse.Builder()
                         .link("facebook.com/profile/123123")
                         .name("facebook").build(),

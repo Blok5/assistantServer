@@ -19,8 +19,10 @@ public class DoubleGisClientConfig {
 
     @Bean
     DoubleGisClient doubleGisClient(
-        @Value("${sb.assistant.2gis.url}") String url,
-        @Value("${sb.assistant.2gis.key}") String key,
-        @Qualifier("doubleGisRestTemplate") RestTemplate doubleGisRestTemplate
-    ) { return new DoubleGisClientImpl(url, key, doubleGisRestTemplate); }
+            @Value("${sb.assistant.2gis.url}") String url,
+            @Value("${sb.assistant.2gis.key}") String key,
+            @Qualifier("doubleGisRestTemplate") RestTemplate doubleGisRestTemplate
+    ) {
+        return new DoubleGisClientImpl(url, key, doubleGisRestTemplate);
+    }
 }

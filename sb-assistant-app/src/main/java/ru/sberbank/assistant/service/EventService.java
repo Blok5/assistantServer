@@ -19,17 +19,15 @@ public class EventService {
     }
 
     /**
-     *
      * @param event
      * @param routeId
      * @return
      */
     public Route createEventForRoute(Event event, Long routeId) {
-         return routeService.addEvent(event, routeId);
+        return routeService.addEvent(event, routeId);
     }
 
     /**
-     *
      * @param eventId
      * @param routeId
      */

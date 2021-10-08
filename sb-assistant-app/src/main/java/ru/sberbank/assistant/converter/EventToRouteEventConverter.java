@@ -16,44 +16,44 @@ import java.util.TimeZone;
 @Component
 public class EventToRouteEventConverter implements Converter<Event, ru.sberbank.assistant.model.Event> {
 
-    private final Random random=new Random();
+    private final Random random = new Random();
 
     @Override
     public ru.sberbank.assistant.model.Event convert(Event event) {
-        EventDate date=event.getFirstDateAfterToday();
-        EventType type=null;
-        if(event.getCategoryList()!=null && event.getCategoryList().size()>0){
-            type=EventType.fromApiVal(event.getCategoryList().get(0).getApiVal());
+        EventDate date = event.getFirstDateAfterToday();
+        EventType type = null;
+        if (event.getCategoryList() != null && event.getCategoryList().size() > 0) {
+            type = EventType.fromApiVal(event.getCategoryList().get(0).getApiVal());
         }
 
 
-        double rating=Double.parseDouble(String.format("%.1f",4d + (random.nextDouble() * (1))).replace(",","."));
+        double rating = Double.parseDouble(String.format("%.1f", 4d + (random.nextDouble() * (1))).replace(",", "."));
 
 
         return new ru.sberbank.assistant.model.Event.Builder()
                 .rating(rating)
                 .description(event.getDescription())
                 .type(type)
-                .dateStart((event.getDates()!=null&& event.getDates().length>0)?
+                .dateStart((event.getDates() != null && event.getDates().length > 0) ?
                         LocalDateTime.ofInstant(Instant.ofEpochSecond(Long.parseLong(date.getStart())),
-                                TimeZone.getDefault().toZoneId()):null)
-                .dateEnd((event.getDates()!=null&& event.getDates().length>0)?
+                                TimeZone.getDefault().toZoneId()) : null)
+                .dateEnd((event.getDates() != null && event.getDates().length > 0) ?
                         LocalDateTime.ofInstant(Instant.ofEpochSecond(Long.parseLong(date.getEnd())),
-                                TimeZone.getDefault().toZoneId()):null)
+                                TimeZone.getDefault().toZoneId()) : null)
                 .externalId(Long.parseLong(event.getId()))
                 .source(Source.kudago)
                 .ageRestriction(event.getAgeRestriction())
                 .price(event.getPrice())
-                .imageUrl((event.getImages()!=null && event.getImages().length>0)?event.getImages()[0].getImageUrl():
+                .imageUrl((event.getImages() != null && event.getImages().length > 0) ? event.getImages()[0].getImageUrl() :
                         "")
                 .name(event.getTitle())
                 .place(new Place.Builder()
-                        .externalId((event.getPlace().getId()!=null)?Long.parseLong(event.getPlace().getId()):1L)
+                        .externalId((event.getPlace().getId() != null) ? Long.parseLong(event.getPlace().getId()) : 1L)
                         .lat(event.getPlace().getCoords().getLat())
                         .lon(event.getPlace().getCoords().getLon())
                         .address(event.getPlace().getAddress())
                         .source(Source.kudago)
-                .build())
+                        .build())
                 .build();
     }
 }

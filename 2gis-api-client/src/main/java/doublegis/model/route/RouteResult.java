@@ -8,7 +8,7 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RouteResult implements Serializable {
 
-   private List<RoutePoint> elements;
+    private List<RoutePoint> elements;
 
     public List<RoutePoint> getElements() {
         return elements;

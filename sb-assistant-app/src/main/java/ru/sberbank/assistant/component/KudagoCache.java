@@ -35,9 +35,9 @@ public class KudagoCache {
     }
 
     public void setEventNewList(CopyOnWriteArrayList<Event> eventNewList) {
-        if(this.getEventNewList()==null) {
-            this.eventNewList=eventNewList;
-        }else {
+        if (this.getEventNewList() == null) {
+            this.eventNewList = eventNewList;
+        } else {
             appendEventNewList(eventNewList);
         }
     }
@@ -46,36 +46,35 @@ public class KudagoCache {
         this.eventNewList.addAll(eventNewList);
     }
 
-    public Event lucky(){
-        if(hasCache()){
-            Date today= new Date();
-            Calendar c= Calendar.getInstance();
+    public Event lucky() {
+        if (hasCache()) {
+            Date today = new Date();
+            Calendar c = Calendar.getInstance();
             c.setTime(today);
-            c.add(Calendar.DATE,7);
-            CopyOnWriteArrayList<Event> eventCurrentListTemp=eventCurrentList.stream().filter(p -> p.applyFilters(today, c.getTime(), null, "", null)).collect(Collectors.toCollection(CopyOnWriteArrayList::new));
-            double luckyPos= Math.random()*eventCurrentListTemp.size();
+            c.add(Calendar.DATE, 7);
+            CopyOnWriteArrayList<Event> eventCurrentListTemp = eventCurrentList.stream().filter(p -> p.applyFilters(today, c.getTime(), null, "", null)).collect(Collectors.toCollection(CopyOnWriteArrayList::new));
+            double luckyPos = Math.random() * eventCurrentListTemp.size();
             return eventCurrentListTemp.get((int) luckyPos);
         }
         return kudagoClient.lucky();
 
     }
 
-    public boolean hasCache(){
-        if(eventCurrentList!= null && eventCurrentList.size()>0){
+    public boolean hasCache() {
+        if (eventCurrentList != null && eventCurrentList.size() > 0) {
             return true;
         }
         return false;
     }
 
 
+    public CopyOnWriteArrayList<Event> searchEvents(Date dateFrom, Date dateTo, Location location, String isFree, Category categories) {
+        if (hasCache()) {
+            return eventCurrentList.stream().filter(p -> p.applyFilters(dateFrom, dateTo, location, isFree, categories)).collect(Collectors.toCollection(CopyOnWriteArrayList::new));
 
-    public CopyOnWriteArrayList<Event> searchEvents(Date dateFrom, Date dateTo, Location location, String isFree, Category categories){
-            if(hasCache()) {
-                return eventCurrentList.stream().filter(p -> p.applyFilters(dateFrom, dateTo, location, isFree, categories)).collect(Collectors.toCollection(CopyOnWriteArrayList::new));
-
-            }
-            return new CopyOnWriteArrayList<>(
-                    kudagoClient.searchEvents(dateTo,dateFrom,location,isFree,categories,20));
+        }
+        return new CopyOnWriteArrayList<>(
+                kudagoClient.searchEvents(dateTo, dateFrom, location, isFree, categories, 20));
     }
 
 }

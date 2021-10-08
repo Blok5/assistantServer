@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
-import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -23,9 +22,9 @@ public class SpringFoxConfig {
                 .apiInfo(metaData());
     }
 
-    private ApiInfo metaData(){
-        return new ApiInfo("Pelmennaya №2"," Assitant api hackaton",
-                "v1","","Pelmennaya №2","Pelmannaya2.ru",
+    private ApiInfo metaData() {
+        return new ApiInfo("Pelmennaya №2", " Assitant api hackaton",
+                "v1", "", "Pelmennaya №2", "Pelmannaya2.ru",
                 "pelmannaya2@hackaton.ru");
     }
 }

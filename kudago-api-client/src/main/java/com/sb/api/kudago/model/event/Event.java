@@ -23,13 +23,13 @@ public class Event implements Serializable {
     private int favoritesCount;
     private String description;
     private String id;
-    private EventDate [] dates;
+    private EventDate[] dates;
     @JsonProperty(value = "age_restriction")
     private String ageRestriction;
     private String price;
     @JsonProperty(value = "is_free")
     private boolean isFree;
-    private EventImage [] images;
+    private EventImage[] images;
     private Place place;
     private List<Category> categoryList;
 
@@ -106,32 +106,32 @@ public class Event implements Serializable {
     }
 
     @JsonIgnore
-    public boolean applyFilters(Date dateFrom, Date dateTo, Location location, String isFree, Category categories){
-        boolean dateFromVal=false;
-        boolean dateToVal=false;
-        boolean locationVal=false;
-        boolean isFreeVal=false;
-        boolean categoriesVal=false;
+    public boolean applyFilters(Date dateFrom, Date dateTo, Location location, String isFree, Category categories) {
+        boolean dateFromVal = false;
+        boolean dateToVal = false;
+        boolean locationVal = false;
+        boolean isFreeVal = false;
+        boolean categoriesVal = false;
 
-        if(dateFrom== null){
-            dateFromVal=true;
-        }else{
-            if(getDates()!=null){
-                for(EventDate date:getDates()){
-                    if(dateFrom.getTime()/1000L> Long.parseLong(date.getStart())){
-                        dateFromVal=true;
+        if (dateFrom == null) {
+            dateFromVal = true;
+        } else {
+            if (getDates() != null) {
+                for (EventDate date : getDates()) {
+                    if (dateFrom.getTime() / 1000L > Long.parseLong(date.getStart())) {
+                        dateFromVal = true;
                         break;
                     }
                 }
             }
         }
-        if(dateTo== null){
-            dateToVal=true;
-        }else{
-            if(getDates()!=null){
-                for(EventDate date:getDates()){
-                    if(dateTo.getTime()/1000L< Long.parseLong(date.getEnd())){
-                        dateToVal=true;
+        if (dateTo == null) {
+            dateToVal = true;
+        } else {
+            if (getDates() != null) {
+                for (EventDate date : getDates()) {
+                    if (dateTo.getTime() / 1000L < Long.parseLong(date.getEnd())) {
+                        dateToVal = true;
                         break;
                     }
                 }
@@ -146,35 +146,35 @@ public class Event implements Serializable {
         } */
 
         //todo category parse
-        if(categories==null){
-            categoriesVal=true;
-        }else if(categoryList!=null){
-            for (Category cat: categoryList){
-                if(cat.equals(categories)){
-                    categoriesVal=true;
+        if (categories == null) {
+            categoriesVal = true;
+        } else if (categoryList != null) {
+            for (Category cat : categoryList) {
+                if (cat.equals(categories)) {
+                    categoriesVal = true;
                 }
             }
         }
 
-       if(isFree==null){
-           isFreeVal=true;
-       }else if(Boolean.parseBoolean(isFree)==isFree()){
-           isFreeVal=true;
-       }
+        if (isFree == null) {
+            isFreeVal = true;
+        } else if (Boolean.parseBoolean(isFree) == isFree()) {
+            isFreeVal = true;
+        }
         return (dateFromVal && dateToVal && categoriesVal && isFreeVal);
     }
 
     @JsonSetter("categories")
-    public void deserializeCategories(List<String> source){
-        categoryList=null;
-        for(String sourceVal:source){
+    public void deserializeCategories(List<String> source) {
+        categoryList = null;
+        for (String sourceVal : source) {
             try {
-                Category cat=Category.fromApiVal(sourceVal);
-                if(categoryList==null){
-                    categoryList=new ArrayList<>();
+                Category cat = Category.fromApiVal(sourceVal);
+                if (categoryList == null) {
+                    categoryList = new ArrayList<>();
                 }
                 categoryList.add(cat);
-            }catch (IllegalArgumentException e){
+            } catch (IllegalArgumentException e) {
                 // пропускаем
             }
         }
@@ -197,22 +197,22 @@ public class Event implements Serializable {
         this.place = place;
     }
 
-    public EventDate getFirstDateAfterToday(){
-        if(dates==null){
+    public EventDate getFirstDateAfterToday() {
+        if (dates == null) {
             return null;
         }
-        long todayUnix=new Date().getTime()/1000L;
-        for(EventDate eventDate: dates){
-            if(Long.parseLong(eventDate.getEndPlain())>=todayUnix
-                    && (Long.parseLong(eventDate.getStartPlain())>=todayUnix ||
+        long todayUnix = new Date().getTime() / 1000L;
+        for (EventDate eventDate : dates) {
+            if (Long.parseLong(eventDate.getEndPlain()) >= todayUnix
+                    && (Long.parseLong(eventDate.getStartPlain()) >= todayUnix ||
                     (LocalDateTime.ofInstant(Instant.ofEpochSecond(Long.parseLong(eventDate.getStartPlain())),
-                            TimeZone.getDefault().toZoneId()).getDayOfMonth()!=
+                            TimeZone.getDefault().toZoneId()).getDayOfMonth() !=
                             LocalDateTime.ofInstant(Instant.ofEpochSecond(Long.parseLong(eventDate.getEndPlain())),
                                     TimeZone.getDefault().toZoneId()).getDayOfMonth() ||
                             LocalDateTime.ofInstant(Instant.ofEpochSecond(Long.parseLong(eventDate.getStartPlain())),
-                                    TimeZone.getDefault().toZoneId()).getMonthValue()!=
+                                    TimeZone.getDefault().toZoneId()).getMonthValue() !=
                                     LocalDateTime.ofInstant(Instant.ofEpochSecond(Long.parseLong(eventDate.getEndPlain())),
-                                            TimeZone.getDefault().toZoneId()).getMonthValue()))){
+                                            TimeZone.getDefault().toZoneId()).getMonthValue()))) {
                 return eventDate;
             }
         }

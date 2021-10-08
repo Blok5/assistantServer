@@ -5,10 +5,10 @@ import ru.sberbank.assistant.ref.PlaceType;
 
 public class StringToPlaceTypeConverter implements Converter<String, PlaceType> {
 
-        @Override
-        public PlaceType convert(String source) {
-            return PlaceType.fromFrontVal(source);
-        }
+    @Override
+    public PlaceType convert(String source) {
+        return PlaceType.fromFrontVal(source);
+    }
 
 
 }

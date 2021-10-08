@@ -7,7 +7,8 @@ import java.io.Serializable;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RouteCharacteristic implements Serializable {
     private String text;
-    private long value;;
+    private long value;
+    ;
 
     public String getText() {
         return text;

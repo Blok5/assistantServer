@@ -6,8 +6,8 @@ public class ProfilePulse {
     private String name;
     private LocalDate dateOfBirth;
     private String address;
-    private String [] skills;
-    private String [] interests;
+    private String[] skills;
+    private String[] interests;
     private SocialPulse[] social;
     private String imageUrl;
 

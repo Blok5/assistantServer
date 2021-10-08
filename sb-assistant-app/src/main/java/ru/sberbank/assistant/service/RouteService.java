@@ -20,14 +20,13 @@ public class RouteService {
     }
 
     /**
-     *
      * @return
      */
     public List<Route> getRoutes() {
         return routeRepository.findAll();
     }
+
     /**
-     *
      * @return
      */
     public Route getRouteById(Long routeId) {
@@ -38,7 +37,6 @@ public class RouteService {
     }
 
     /**
-     *
      * @return
      */
     public Route createRoute() {
@@ -46,14 +44,13 @@ public class RouteService {
     }
 
     public Route getRoutById(Long id) {
-        if(!routeRepository.existsById(id)){
+        if (!routeRepository.existsById(id)) {
             return null;
         }
         return routeRepository.getById(id);
     }
 
     /**
-     *
      * @param routeId
      */
     public void deleteRoute(Long routeId) {
@@ -65,7 +62,6 @@ public class RouteService {
     }
 
     /**
-     *
      * @param event
      * @param routeId
      */
@@ -80,7 +76,6 @@ public class RouteService {
     }
 
     /**
-     *
      * @param event
      * @param routeId
      */

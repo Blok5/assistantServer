@@ -25,21 +25,22 @@ public enum Location {
         return apiVal;
     }
 
-    public static  Location fromApiVal(String apiVal){
-        for (Location location: values()){
-            if(location.apiVal.equals(apiVal)){
+    public static Location fromApiVal(String apiVal) {
+        for (Location location : values()) {
+            if (location.apiVal.equals(apiVal)) {
                 return location;
             }
         }
-        throw new IllegalArgumentException("Unknown location "+ apiVal);
+        throw new IllegalArgumentException("Unknown location " + apiVal);
     }
+
     //для генерации аннотации allowedValues
-    public static  String validValues() {
-        StringBuilder res= new StringBuilder();
+    public static String validValues() {
+        StringBuilder res = new StringBuilder();
         for (Location location : values()) {
             res.append(location.apiVal).append(",");
         }
-        return res.substring(0,res.length()-1);
+        return res.substring(0, res.length() - 1);
     }
 
 

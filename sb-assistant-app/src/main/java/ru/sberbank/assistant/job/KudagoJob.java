@@ -10,7 +10,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.yaml.snakeyaml.error.Mark;
 import ru.sberbank.assistant.component.KudagoCache;
 
 import java.util.Calendar;
@@ -22,32 +21,32 @@ import java.util.stream.Collectors;
 public class KudagoJob implements Job {
 
     @Autowired
-    private  KudagoClient kudagoClient;
+    private KudagoClient kudagoClient;
     @Autowired
-    private  KudagoCache kudagoCache;
+    private KudagoCache kudagoCache;
 
     Logger logger = LoggerFactory.getLogger(KudagoJob.class);
 
     public void execute(JobExecutionContext context) throws JobExecutionException {
         logger.warn("Kudago cache start getting...");
-        Date today=new Date();
-        Calendar c= Calendar.getInstance();
+        Date today = new Date();
+        Calendar c = Calendar.getInstance();
         c.setTime(today);
-        c.add(Calendar.DATE,7);
-        SearchEventResponse response=kudagoClient.getEventList(today,c.getTime(), Location.MSK.getApiVal(),"", "",100);
-        if(response!=null && response.getResults()!=null){
-                while(response.getNext()!=null && !response.getNext().equals("")){
+        c.add(Calendar.DATE, 7);
+        SearchEventResponse response = kudagoClient.getEventList(today, c.getTime(), Location.MSK.getApiVal(), "", "", 100);
+        if (response != null && response.getResults() != null) {
+            while (response.getNext() != null && !response.getNext().equals("")) {
 
-                    // фильтруем пустые места
-                    kudagoCache.setEventNewList(new CopyOnWriteArrayList<>(response.getResults().stream().filter(e->e.getPlace()!=null)
-                            .collect(Collectors.toList())));
+                // фильтруем пустые места
+                kudagoCache.setEventNewList(new CopyOnWriteArrayList<>(response.getResults().stream().filter(e -> e.getPlace() != null)
+                        .collect(Collectors.toList())));
 
-                    response=kudagoClient.getNextPage(response.getNext());
+                response = kudagoClient.getNextPage(response.getNext());
 
 
-                }
-            if(response!=null && response.getResults()!=null){
-                kudagoCache.setEventNewList(new CopyOnWriteArrayList<>(response.getResults().stream().filter(e->e.getPlace()!=null)
+            }
+            if (response != null && response.getResults() != null) {
+                kudagoCache.setEventNewList(new CopyOnWriteArrayList<>(response.getResults().stream().filter(e -> e.getPlace() != null)
                         .collect(Collectors.toList())));
             }
 

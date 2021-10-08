@@ -6,11 +6,11 @@ public class RoutePointReq {
     private double lat2;
     private double lon2;
 
-    public RoutePointReq(double lat1,double lon1,double lat2, double lon2){
-        this.lat1=lat1;
-        this.lon1=lon1;
-        this.lat2=lat2;
-        this.lon2=lon2;
+    public RoutePointReq(double lat1, double lon1, double lat2, double lon2) {
+        this.lat1 = lat1;
+        this.lon1 = lon1;
+        this.lat2 = lat2;
+        this.lon2 = lon2;
     }
 
     public double getLat1() {

@@ -10,7 +10,7 @@ import java.util.Map;
 
 public interface DoubleGisClient {
 
-    List<Place> searchPlace(String query,Double lon, Double lat,Integer radius);
+    List<Place> searchPlace(String query, Double lon, Double lat, Integer radius);
 
-    List<Map<String, RouteCharacteristicResp>> getDistance(List <Point> coords);
+    List<Map<String, RouteCharacteristicResp>> getDistance(List<Point> coords);
 }

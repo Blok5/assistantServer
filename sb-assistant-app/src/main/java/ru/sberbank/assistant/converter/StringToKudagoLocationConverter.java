@@ -5,10 +5,10 @@ import org.springframework.core.convert.converter.Converter;
 
 public class StringToKudagoLocationConverter implements Converter<String, Location> {
 
-        @Override
-        public Location convert(String source) {
-            return Location.fromApiVal(source);
-        }
+    @Override
+    public Location convert(String source) {
+        return Location.fromApiVal(source);
+    }
 
 
 }

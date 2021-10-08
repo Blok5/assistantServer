@@ -4,7 +4,7 @@ public class GrowthPulse {
     private String name;
     private String description;
     private long duration;
-    private String [] tags;
+    private String[] tags;
     private String type;
     private double rating;
     private int numOfViews;

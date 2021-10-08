@@ -5,7 +5,6 @@ import ru.sberbank.assistant.ref.EventType;
 import ru.sberbank.assistant.ref.Source;
 
 import javax.persistence.*;
-
 import java.time.LocalDateTime;
 
 import static javax.persistence.GenerationType.SEQUENCE;
@@ -199,7 +198,7 @@ public class Event {
 
     public void setRoute(Route route, boolean add) {
         this.route = route;
-        if (route != null && add)  {
+        if (route != null && add) {
             route.addEvent(this, false);
         }
     }
