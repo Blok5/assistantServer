@@ -52,9 +52,9 @@ public class KudagoCache {
             Calendar c = Calendar.getInstance();
             c.setTime(today);
             c.add(Calendar.DATE, 7);
-            CopyOnWriteArrayList<Event> eventCurrentListTemp = eventCurrentList.stream().filter(p -> p.applyFilters(today, c.getTime(), null, "", null)).collect(Collectors.toCollection(CopyOnWriteArrayList::new));
-            double luckyPos = Math.random() * eventCurrentListTemp.size();
-            return eventCurrentListTemp.get((int) luckyPos);
+//            CopyOnWriteArrayList<Event> eventCurrentListTemp = eventCurrentList.stream().filter(p -> p.applyFilters(today, c.getTime(), null, "", null)).collect(Collectors.toCollection(CopyOnWriteArrayList::new));
+            double luckyPos = Math.random() * eventCurrentList.size();
+            return eventCurrentList.get((int) luckyPos);
         }
         return kudagoClient.lucky();
 
