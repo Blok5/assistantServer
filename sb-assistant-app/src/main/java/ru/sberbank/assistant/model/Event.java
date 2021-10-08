@@ -1,6 +1,7 @@
 package ru.sberbank.assistant.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import ru.sberbank.assistant.controller.StringArrayConverter;
 import ru.sberbank.assistant.ref.EventType;
 import ru.sberbank.assistant.ref.Source;
 
@@ -55,6 +56,13 @@ public class Event {
             name = "rating"
     )
     private double rating;
+
+    @Convert(converter = StringArrayConverter.class)
+    @Column(
+            name = "tags"
+    )
+    private String [] tags;
+
 
     @Column(
             name = "image_url"
@@ -133,6 +141,7 @@ public class Event {
         setAgeRestriction(builder.ageRestriction);
         setPrice(builder.price);
         setRating(builder.rating);
+        setTags(builder.tags);
         setImageUrl(builder.imageUrl);
         setExternalId(builder.externalId);
         setSource(builder.source);
@@ -277,6 +286,14 @@ public class Event {
         this.rating = rating;
     }
 
+    public String[] getTags() {
+        return tags;
+    }
+
+    public void setTags(String[] tags) {
+        this.tags = tags;
+    }
+
     public static final class Builder {
         private Long id;
         private String name;
@@ -284,6 +301,7 @@ public class Event {
         private String ageRestriction;
         private String price;
         private double rating;
+        private String[] tags;
         private String imageUrl;
         private Long externalId;
         private Source source;
@@ -323,6 +341,11 @@ public class Event {
 
         public Builder rating(double val) {
             rating = val;
+            return this;
+        }
+
+        public Builder tags(String[] val) {
+            tags = val;
             return this;
         }
 
