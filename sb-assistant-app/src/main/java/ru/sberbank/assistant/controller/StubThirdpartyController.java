@@ -99,6 +99,22 @@ public class StubThirdpartyController {
     public List<GrowthPulse> getPulseGrowth() {
         List<GrowthPulse> growthPulses = new ArrayList<>();
 
+
+
+        //обучения
+        growthPulses.add(new GrowthPulse.Builder()
+                .name("SberMock - централизованный сервис управления эмуляциями")
+                .type("growth")
+                .description("Процесс интеграционного взаимодействия хорошо представлен в электронном курсе «Инструменты производственного процесса: META». С ним вы быстро и качественно научитесь проектировать системные решения.")
+                .tags(new String[]{"Разработка", "Интеграции"})
+                .duration(45)
+                .rating(4.7d)
+                .numOfViews(27)
+                .imageUrl(url + "/sberMock2.png")
+                .courseUrl("https://sberbank-school.ru/programs/8627/about#")
+                .knowledgeFor("На хакатоне пригодится! ;)")
+                .build());
+
         //Random Coffee
         growthPulses.add(new GrowthPulse.Builder()
                 .name("Random Coffee")
@@ -117,20 +133,6 @@ public class StubThirdpartyController {
                         "Ищущим рост в своём деле")
                 .build());
 
-        //обучения
-        growthPulses.add(new GrowthPulse.Builder()
-                .name("SberMock - централизованный сервис управления эмуляциями")
-                .type("growth")
-                .description("Процесс интеграционного взаимодействия хорошо представлен в электронном курсе «Инструменты производственного процесса: META». С ним вы быстро и качественно научитесь проектировать системные решения.")
-                .tags(new String[]{"Разработка", "Интеграции"})
-                .duration(45)
-                .rating(4.7d)
-                .numOfViews(27)
-                .imageUrl(url + "/sberMock2.png")
-                .courseUrl("https://sberbank-school.ru/programs/8627/about#")
-                .knowledgeFor("На хакатоне пригодится! ;)")
-                .build());
-
         //СберИдея
         growthPulses.add(new GrowthPulse.Builder()
                 .name("Продуктовая мастерская")
@@ -146,7 +148,7 @@ public class StubThirdpartyController {
                                 "Выведи продуктовую команду на новый уровень. )")
                         .build());
 
-        growthPulses.add(new GrowthPulse.Builder()
+/*        growthPulses.add(new GrowthPulse.Builder()
                 .name("Модель компетенций 2023")
                 .type("growth")
                 .description("Что поможет при встрече с неизвестным? \n" +
@@ -158,6 +160,95 @@ public class StubThirdpartyController {
                 .imageUrl(url + "/model2023.jpeg")
                 .courseUrl("https://www.sbidea.ru/mk2023/promo")
                 .knowledgeFor("Развивай важнейшие группы компетенций в рамках программы 2023")
+                .build());*/
+        //Саморазвитие
+        growthPulses.add(new GrowthPulse.Builder()
+                .name("Если хочешь стать осознанным родителем, то присоединяйся\n")
+                .type("growth")
+                .description("Портал «Сбер для детей и родителей».\n" +
+                        "Линейка обучающих программ по развитию родительских компетенций:")
+                .tags(new String[]{"Семья", "Work and balance"})
+                .duration(15)
+                .rating(4.8d)
+                .numOfViews(19)
+                .imageUrl(url + "/family.png")
+                .courseUrl("https://www.sbidea.ru/self-realization#parents\n")
+                .knowledgeFor("Зачем это мне?\n" +
+                        "Сбер поддерживает сотрудников в разных ролях, и с особым вниманием мы относимся к нашим сотрудникам-родителям и тем, кто готовится ими стать. Семья, родительство, партнеры, дети, близкие, друзья – это то, что объединяет многих из нас и важно для каждого, ведь социальные связи и личные отношения - один из пяти элементов благополучия.\n" +
+                        "\n" +
+                        "Присутствие в нашей жизни понимания, поддержки и заботы со стороны семьи и друзей создаёт нам «подушку безопасности», благодаря которой мы более спокойны, рассудительны и креативны, легче принимаем рациональные решения, лучше управляем конфликтами (или взвешенно избегаем их), реже ошибаемся, быстрее решаем даже самые сложные задачи.")
+                .build());
+
+
+        //ToDo Пульс
+        growthPulses.add(new GrowthPulse.Builder()
+                .name("У тебя просроченная задача!")
+                .type("growth")
+                .description("Провести исследования инструментов для веб-аналитики")
+                .tags(new String[]{"Пульс", "Личные задачи"})
+                .duration(5)
+                .rating(4.9d)
+                .numOfViews(349)
+                .imageUrl(url + "/tododeff.png")
+                .courseUrl("hr.sberbank.ru")
+                .knowledgeFor("Позволит собрать более точные метрики")
+                .build());
+
+        growthPulses.add(new GrowthPulse.Builder()
+                .name("У тебя важная задача от HR!")
+                .type("growth")
+                .description("Ознакомление с документами")
+                .tags(new String[]{"Пульс", "Документы"})
+                .duration(2)
+                .rating(4.1d)
+                .numOfViews(579)
+                .imageUrl(url + "/signDoc.png")
+                .courseUrl("hr.sberbank.ru")
+                .knowledgeFor("")
+                .build());
+
+
+        growthPulses.add(new GrowthPulse.Builder()
+                .name("Лучший по профессии!")
+                .type("growth")
+                .description("\n" +
+                        "Конкурс профессионального мастерства.\n" +
+                        "Победители будут определены по итогам оценки корпоративных компетенций: профессиональных и «мягких навыков».\n" +
+                        "Лучший по профессии - это возможность:\n" +
+                        "развиваться в профессии и строить карьеру;\n" +
+                        "ставить перед собой амбициозные цели;\n" +
+                        "получить стимул для личного и профессионального роста.")
+                .tags(new String[]{"Разработка", "Хакатон"})
+                .duration(15)
+                .rating(4.7d)
+                .numOfViews(390)
+                .imageUrl(url + "/bestProfi2.png")
+                .courseUrl("https://sbidea.ru/lp2021/main\n")
+                .knowledgeFor("Приобретешь веру в себя, признание коллег.\n" +
+                        "Заведешь новые интересные знакомства.\n" +
+                        "Прокачаешь свои навыки в хакатоне и бизнес-играх.\n" +
+                        "\n" +
+                        "Победители и призеры будут награждены:\n" +
+                        "знаками отличия «Лучший по профессии»,\n" +
+                        "сертификатом на программу обучения «Лидеры будущего»,\n" +
+                        "денежной премией.")
+                .build());
+
+        //Видео
+        growthPulses.add(new GrowthPulse.Builder()
+                .name("Как выиграть хакатон")
+                .type("growth")
+                .description("Секреты, как выигрывать хакатоны и рассказ про победу в международном хакатоне от McKinsey.")
+                .tags(new String[]{"Хакатон", "Youtube"})
+                .duration(20)
+                .rating(4.8d)
+                .numOfViews(319)
+                .imageUrl(url + "/youtube.png")
+                .courseUrl("https://www.youtube.com/watch?v=AhBEBZRtpx0\n")
+                .knowledgeFor("Из этого видео вы сможете узнать:\n" +
+                        "- Что мечтает услышать каждый организатор хакатона в вашем решении\n" +
+                        "- Как правильно работать над основными частями хакатона: бизнес частью, алгоритмами, презентацией решения.\n" +
+                        "- Еще раз о пользе target encoding и cross-validation\n")
                 .build());
 
         growthPulses.add(new GrowthPulse.Builder()
@@ -195,31 +286,7 @@ public class StubThirdpartyController {
                         "Прокачаешь свои навыки работы в команде, целеполагания и публичных выступлений.")
                 .build());
 
-        growthPulses.add(new GrowthPulse.Builder()
-                .name("Лучший по профессии!")
-                .type("growth")
-                .description("\n" +
-                        "Конкурс профессионального мастерства.\n" +
-                        "Победители будут определены по итогам оценки корпоративных компетенций: профессиональных и «мягких навыков».\n" +
-                        "Лучший по профессии - это возможность:\n" +
-                        "развиваться в профессии и строить карьеру;\n" +
-                        "ставить перед собой амбициозные цели;\n" +
-                        "получить стимул для личного и профессионального роста.")
-                .tags(new String[]{"Разработка", "Хакатон"})
-                .duration(15)
-                .rating(4.7d)
-                .numOfViews(390)
-                .imageUrl(url + "/bestProfi2.png")
-                .courseUrl("https://sbidea.ru/lp2021/main\n")
-                .knowledgeFor("Приобретешь веру в себя, признание коллег.\n" +
-                        "Заведешь новые интересные знакомства.\n" +
-                        "Прокачаешь свои навыки в хакатоне и бизнес-играх.\n" +
-                        "\n" +
-                        "Победители и призеры будут награждены:\n" +
-                        "знаками отличия «Лучший по профессии»,\n" +
-                        "сертификатом на программу обучения «Лидеры будущего»,\n" +
-                        "денежной премией.")
-                .build());
+
 
         growthPulses.add(new GrowthPulse.Builder()
                 .name("Сбер Профи")
@@ -237,40 +304,9 @@ public class StubThirdpartyController {
                         " Расширишь свой круг профессиональных контактов.")
                 .build());
 
-        //Видео
-        growthPulses.add(new GrowthPulse.Builder()
-                .name("Как выиграть хакатон")
-                .type("growth")
-                .description("Секреты, как выигрывать хакатоны и рассказ про победу в международном хакатоне от McKinsey.")
-                .tags(new String[]{"Хакатон", "Youtube"})
-                .duration(20)
-                .rating(4.8d)
-                .numOfViews(319)
-                .imageUrl(url + "/youtube.png")
-                .courseUrl("https://www.youtube.com/watch?v=AhBEBZRtpx0\n")
-                .knowledgeFor("Из этого видео вы сможете узнать:\n" +
-                        "- Что мечтает услышать каждый организатор хакатона в вашем решении\n" +
-                        "- Как правильно работать над основными частями хакатона: бизнес частью, алгоритмами, презентацией решения.\n" +
-                        "- Еще раз о пользе target encoding и cross-validation\n")
-                .build());
 
-        //Саморазвитие
-        growthPulses.add(new GrowthPulse.Builder()
-                .name("Если хочешь стать осознанным родителем, то присоединяйся\n")
-                .type("growth")
-                .description("Портал «Сбер для детей и родителей».\n" +
-                        "Линейка обучающих программ по развитию родительских компетенций:")
-                .tags(new String[]{"Семья", "Work and balance"})
-                .duration(15)
-                .rating(4.8d)
-                .numOfViews(19)
-                .imageUrl(url + "/family.png")
-                .courseUrl("https://www.sbidea.ru/self-realization#parents\n")
-                .knowledgeFor("Зачем это мне?\n" +
-                        "Сбер поддерживает сотрудников в разных ролях, и с особым вниманием мы относимся к нашим сотрудникам-родителям и тем, кто готовится ими стать. Семья, родительство, партнеры, дети, близкие, друзья – это то, что объединяет многих из нас и важно для каждого, ведь социальные связи и личные отношения - один из пяти элементов благополучия.\n" +
-                        "\n" +
-                        "Присутствие в нашей жизни понимания, поддержки и заботы со стороны семьи и друзей создаёт нам «подушку безопасности», благодаря которой мы более спокойны, рассудительны и креативны, легче принимаем рациональные решения, лучше управляем конфликтами (или взвешенно избегаем их), реже ошибаемся, быстрее решаем даже самые сложные задачи.")
-                .build());
+
+
 
         growthPulses.add(new GrowthPulse.Builder()
                 .name("Запишись на зеленый марафон")
@@ -288,33 +324,6 @@ public class StubThirdpartyController {
                         "Человек живёт, не замечая масштабов своего потребления: питается, пользуется автомобилем, выбрасывает мусор и выдыхает углекислый газ. Для полноценной жизни нам нужны здоровая еда, чистая вода, свежий воздух. В течение всей жизни мы расходуем ресурсы планеты. Мера скорости и разрушительности воздействия человека на окружающую среду называется Экологический след. Единица измерения – глобальный гектар. Экослед человечества в 1,6 раз превышает возможности планеты. Любой из нас в силах внести свой вклад в решение этой проблемы.")
                 .build());
 
-
-        //ToDo Пульс
-        growthPulses.add(new GrowthPulse.Builder()
-                .name("У тебя просроченная задача!")
-                .type("growth")
-                .description("Провести исследования инструментов для веб-аналитики")
-                .tags(new String[]{"Пульс", "Личные задачи"})
-                .duration(5)
-                .rating(4.9d)
-                .numOfViews(349)
-                .imageUrl(url + "/tododeff.png")
-                .courseUrl("hr.sberbank.ru")
-                .knowledgeFor("Позволит собрать более точные метрики")
-                .build());
-
-        growthPulses.add(new GrowthPulse.Builder()
-                .name("У тебя важная задача от HR!")
-                .type("growth")
-                .description("Ознакомление с документами")
-                .tags(new String[]{"Пульс", "Документы"})
-                .duration(2)
-                .rating(4.1d)
-                .numOfViews(579)
-                .imageUrl(url + "/signDoc.png")
-                .courseUrl("hr.sberbank.ru")
-                .knowledgeFor("")
-                .build());
 
         //Опросы
 
