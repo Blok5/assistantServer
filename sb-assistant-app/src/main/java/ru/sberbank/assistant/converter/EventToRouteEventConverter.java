@@ -2,6 +2,7 @@ package ru.sberbank.assistant.converter;
 
 import com.sb.api.kudago.model.event.Event;
 import com.sb.api.kudago.model.event.EventDate;
+import com.sb.api.kudago.model.ref.Category;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 import ru.sberbank.assistant.model.Place;
@@ -18,8 +19,16 @@ public class EventToRouteEventConverter implements Converter<Event, ru.sberbank.
 
     private final Random random = new Random();
 
+
     @Override
     public ru.sberbank.assistant.model.Event convert(Event event) {
+        String[] tags = {};
+        if(event.getCategoryList()!=null) {
+            tags = new String[event.getCategoryList().size()];
+            for (int i=0;i< event.getCategoryList().size();i++){
+                tags[i]=event.getCategoryList().get(i).getLocalizedVal();
+            }
+        }
         EventDate date = event.getFirstDateAfterToday();
         EventType type = null;
         if (event.getCategoryList() != null && event.getCategoryList().size() > 0) {
@@ -31,6 +40,7 @@ public class EventToRouteEventConverter implements Converter<Event, ru.sberbank.
 
 
         return new ru.sberbank.assistant.model.Event.Builder()
+                .tags(tags)
                 .rating(rating)
                 .description(event.getDescription())
                 .type(type)

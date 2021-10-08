@@ -21,6 +21,7 @@ public class PlaceToRouteEventConverter implements Converter<doublegis.model.pla
 
 
         return new ru.sberbank.assistant.model.Event.Builder()
+                .tags(new String[] {"Кафе","Рестораны"})
                 .type(EventType.CAFE)
                 .externalId(Long.parseLong(event.getId()))
                 .source(Source.doubleGis)
