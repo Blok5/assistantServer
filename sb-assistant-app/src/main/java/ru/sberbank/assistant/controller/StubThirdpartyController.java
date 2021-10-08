@@ -21,7 +21,7 @@ public class StubThirdpartyController {
     private String url;
 
     public StubThirdpartyController(Environment environment) {
-        url = environment.getProperty("sb.assistant.url") + ":8080/assistant/images";
+        url = environment.getProperty("sb.assistant.image.url");
     }
 
 //    @PostConstruct
