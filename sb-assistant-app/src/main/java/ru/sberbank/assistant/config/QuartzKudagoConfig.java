@@ -72,10 +72,10 @@ public class QuartzKudagoConfig {
         SimpleTriggerFactoryBean trigger = new SimpleTriggerFactoryBean();
         trigger.setJobDetail(job);
 
-        int frequencyInSec = 24*60*60;
+        long frequencyInSec = 24*60*60;
         logger.info("Configuring trigger to fire every {} seconds", frequencyInSec);
 
-        trigger.setRepeatInterval(frequencyInSec * 1000);
+        trigger.setRepeatInterval(frequencyInSec * 1000L);
         trigger.setRepeatCount(SimpleTrigger.REPEAT_INDEFINITELY);
         trigger.setName("Qrtz_Trigger");
         return trigger;

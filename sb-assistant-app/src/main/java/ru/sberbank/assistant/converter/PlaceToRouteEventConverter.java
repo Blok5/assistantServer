@@ -11,11 +11,10 @@ import java.util.Random;
 @Component
 public class PlaceToRouteEventConverter implements Converter<doublegis.model.place.Place, ru.sberbank.assistant.model.Event> {
 
-
+    private final Random random=new Random();
     @Override
     public ru.sberbank.assistant.model.Event convert(doublegis.model.place.Place event) {
 
-        Random random=new Random();
         int cost=500 * (3 + random.nextInt(5 + 1));
         String averageCost="от "+cost+" рублей";
 

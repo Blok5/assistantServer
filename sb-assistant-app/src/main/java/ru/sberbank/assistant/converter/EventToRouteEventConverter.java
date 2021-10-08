@@ -16,7 +16,7 @@ import java.util.TimeZone;
 @Component
 public class EventToRouteEventConverter implements Converter<Event, ru.sberbank.assistant.model.Event> {
 
-
+    private final Random random=new Random();
 
     @Override
     public ru.sberbank.assistant.model.Event convert(Event event) {
@@ -26,7 +26,7 @@ public class EventToRouteEventConverter implements Converter<Event, ru.sberbank.
             type=EventType.fromApiVal(event.getCategoryList().get(0).getApiVal());
         }
 
-        Random random=new Random();
+
         double rating=Double.parseDouble(String.format("%.1f",4d + (random.nextDouble() * (1))).replace(",","."));
 
 
