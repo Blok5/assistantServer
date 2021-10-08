@@ -21,7 +21,7 @@ public class StubThirdpartyController {
     private String url;
 
     public StubThirdpartyController(Environment environment) {
-        url = environment.getProperty("sb.assistant.url") + ":8080/assistant/images";
+        url = environment.getProperty("sb.assistant.image.url");
     }
 
 //    @PostConstruct
@@ -114,7 +114,7 @@ public class StubThirdpartyController {
                         "Встречи с интересными людьми разных профессий" +
                         "Кто хочет быстро расширить список контактов" +
                         "Продуманные нетворкинг-сессии под руководством модератора" +
-                        "Ищущим рост в своём деле\n"")
+                        "Ищущим рост в своём деле")
                 .build());
 
         //обучения
