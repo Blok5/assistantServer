@@ -104,12 +104,12 @@ public class StubThirdpartyController {
                 .name("Random Coffee")
                 .type("growth")
                 .description("Предлагаем тебе человека, близкого по интересам, а неловкость знакомства — берем на себя")
-                .tags(new String[]{"java", "mock"})
-                .duration(520)
+                .tags(new String[]{"Нетворкинг", "SoftSkills"})
+                .duration(60)
                 .rating(4.7d)
-                .numOfViews(27)
+                .numOfViews(827)
                 .imageUrl(url + "/randomcoffee.jpg")
-                .courseUrl("https://sberbank-school.ru/programs/8627/about#")
+                .courseUrl("https://random-coffee.ru")
                 .knowledgeFor("Тем, кто ищет друзей или вдохновляющих собеседников " +
                         "Встречи с интересными людьми разных профессий" +
                         "Кто хочет быстро расширить список контактов" +
@@ -122,8 +122,8 @@ public class StubThirdpartyController {
                 .name("SberMock - централизованный сервис управления эмуляциями")
                 .type("growth")
                 .description("Процесс интеграционного взаимодействия хорошо представлен в электронном курсе «Инструменты производственного процесса: META». С ним вы быстро и качественно научитесь проектировать системные решения.")
-                .tags(new String[]{"java", "mock"})
-                .duration(520)
+                .tags(new String[]{"Разработка", "Интеграции"})
+                .duration(45)
                 .rating(4.7d)
                 .numOfViews(27)
                 .imageUrl(url + "/education-sberMock.png")
@@ -135,8 +135,8 @@ public class StubThirdpartyController {
         growthPulses.add(new GrowthPulse.Builder()
                 .name("Продуктовая мастерская")
                 .type("growth")
-                .description("программа развития продукта и команды продукта за счет внедрения лучших продуктовых практик, инструментов, интенсивной работы с продуктовыми треккерами, внешними экспертами и спикерами")
-                        .tags(new String[]{"product", "agile"})
+                .description("Программа развития продукта и команды продукта за счет внедрения лучших продуктовых практик, инструментов, интенсивной работы с продуктовыми треккерами, внешними экспертами и спикерами")
+                        .tags(new String[]{"Обучение", "Agile"})
                         .duration(0)
                         .rating(4.8d)
                         .numOfViews(159)
@@ -151,8 +151,8 @@ public class StubThirdpartyController {
                 .type("growth")
                 .description("Что поможет при встрече с неизвестным? \n" +
                         "Модель проверена временем, но обновлена в соответствии с требованиями нового мира.")
-                .tags(new String[]{"product", "agile"})
-                .duration(0)
+                .tags(new String[]{"Soft-skills", "Цифровые навыки"})
+                .duration(30)
                 .rating(4.9d)
                 .numOfViews(199)
                 .imageUrl(url + "/model2023.jpeg")
@@ -166,10 +166,10 @@ public class StubThirdpartyController {
                 .description("Система переподготовки сотрудников на востребованные специальности уровня Junior. \n" +
                         "Сейчас проходит подготовка на направления Java Developer, Data Scientist, Data Analyst, Data Engineer и другие.\n" +
                         "Обучение проходит дистанционно в нерабочее время.")
-                .tags(new String[]{"developer", "agile"})
-                .duration(0)
-                .rating(4.8d)
-                .numOfViews(2419)
+                .tags(new String[]{"Обучение", "Digital"})
+                .duration(10)
+                .rating(4.6d)
+                .numOfViews(119)
                 .imageUrl(url + "/reboot2020.jpeg")
                 .courseUrl("https://www.sbidea.ru/mk2023/promo")
                 .knowledgeFor("Получишь основы востребованной профессии от ведущих внутренних экспертов.\n" +
@@ -182,10 +182,10 @@ public class StubThirdpartyController {
                 .name("SberUp")
                 .type("growth")
                 .description("Программа интенсивного обучения предпринимательству сотрудников экосистемы Сбера.")
-                .tags(new String[]{"developer", "agile"})
-                .duration(0)
+                .tags(new String[]{"Стартап", "SoftSkills"})
+                .duration(25)
                 .rating(4.8d)
-                .numOfViews(2419)
+                .numOfViews(823)
                 .imageUrl(url + "/sberUp1.png")
                 .courseUrl("https://sber-up.ru/")
                 .knowledgeFor("Познакомишься с руководителями компаний Экосистемы Сбера. \n" +
@@ -205,10 +205,10 @@ public class StubThirdpartyController {
                         "развиваться в профессии и строить карьеру;\n" +
                         "ставить перед собой амбициозные цели;\n" +
                         "получить стимул для личного и профессионального роста.")
-                .tags(new String[]{"developer", "agile"})
-                .duration(0)
-                .rating(4.8d)
-                .numOfViews(2419)
+                .tags(new String[]{"Разработка", "Хакатон"})
+                .duration(15)
+                .rating(4.7d)
+                .numOfViews(390)
                 .imageUrl(url + "/bestProfi.jpeg")
                 .courseUrl("https://sbidea.ru/lp2021/main\n")
                 .knowledgeFor("Приобретешь веру в себя, признание коллег.\n" +
@@ -225,10 +225,10 @@ public class StubThirdpartyController {
                 .name("Сбер Профи")
                 .type("growth")
                 .description("Профессиональные объединения сотрудников для обмена лучшими практиками, профессионального развития и построения экспертной карьеры.")
-                .tags(new String[]{"developer", "agile"})
-                .duration(0)
-                .rating(4.8d)
-                .numOfViews(2419)
+                .tags(new String[]{"Разработка", "Сообщество"})
+                .duration(30)
+                .rating(4.9d)
+                .numOfViews(7853)
                 .imageUrl(url + "/sberProfi.png")
                 .courseUrl("https://sbidea.ru/sberprofi/main")
                 .knowledgeFor("Внесешь свой вклад в профессиональное развитие коллег и усиление бренда Сбера.\n" +
@@ -242,10 +242,10 @@ public class StubThirdpartyController {
                 .name("Как выиграть хакатон")
                 .type("growth")
                 .description("Секреты, как выигрывать хакатоны и рассказ про победу в международном хакатоне от McKinsey.")
-                .tags(new String[]{"developer", "agile"})
-                .duration(0)
+                .tags(new String[]{"Хакатон", "Youtube"})
+                .duration(20)
                 .rating(4.8d)
-                .numOfViews(2419)
+                .numOfViews(319)
                 .imageUrl(url + "/bestProfi.jpeg")
                 .courseUrl("https://www.youtube.com/watch?v=AhBEBZRtpx0\n")
                 .knowledgeFor("Из этого видео вы сможете узнать:\n" +
@@ -260,10 +260,10 @@ public class StubThirdpartyController {
                 .type("growth")
                 .description("Портал «Сбер для детей и родителей».\n" +
                         "Линейка обучающих программ по развитию родительских компетенций:")
-                .tags(new String[]{"developer", "agile"})
-                .duration(0)
+                .tags(new String[]{"Семья", "Work and balance"})
+                .duration(15)
                 .rating(4.8d)
-                .numOfViews(2419)
+                .numOfViews(19)
                 .imageUrl(url + "/betterParent1.png")
                 .courseUrl("https://www.sbidea.ru/self-realization#parents\n")
                 .knowledgeFor("Зачем это мне?\n" +
@@ -278,10 +278,10 @@ public class StubThirdpartyController {
                 .description("\n" +
                         "Ежегодный проект Сбера, цель которого привлечь внимание к проблемам экологии и пригласить жителей России сделать несколько простых шагов, которые помогут в их решении.\n" +
                         "Сбер, БФ Сбербанка «Вклад в будущее» и СберВместе объединят жителей России, НКО и другие стороны для участия в экологических инициативах «Зелёного Марафона».")
-                .tags(new String[]{"developer", "agile"})
-                .duration(0)
+                .tags(new String[]{"Спорт", "Экология"})
+                .duration(5)
                 .rating(4.8d)
-                .numOfViews(2419)
+                .numOfViews(481)
                 .imageUrl(url + "/greenMarathon.jpeg")
                 .courseUrl("https://greenmarathon.ru/app")
                 .knowledgeFor("\n" +
@@ -289,20 +289,34 @@ public class StubThirdpartyController {
                 .build());
 
 
-
-        //Опросы
+        //ToDo Пульс
         growthPulses.add(new GrowthPulse.Builder()
-                .name("Срочно нужна обратная связь!")
+                .name("У тебя просроченная задача!")
                 .type("growth")
-                .description("Отбор респондентов для интервью по клиентскому опыту. Ищем респондентов для опросов и интервью")
-                .tags(new String[]{"survey", "agile"})
-                .duration(0)
-                .rating(4.6d)
-                .numOfViews(2419)
-                .imageUrl(url + "/helpSurvey.jpeg")
-                .courseUrl("https://www.sbidea.ru/CJM")
+                .description("Провести исследования инструментов для веб-аналитики")
+                .tags(new String[]{"Пульс", "Личные задачи"})
+                .duration(5)
+                .rating(4.9d)
+                .numOfViews(349)
+                .imageUrl(url + "/tododeff.png")
+                .courseUrl("hr.sberbank.ru")
+                .knowledgeFor("Позволит собрать более точные метрики")
+                .build());
+
+        growthPulses.add(new GrowthPulse.Builder()
+                .name("У тебя важная задача от HR!")
+                .type("growth")
+                .description("Ознакомление с документами")
+                .tags(new String[]{"Пульс", "Документы"})
+                .duration(2)
+                .rating(4.1d)
+                .numOfViews(579)
+                .imageUrl(url + "/signDoc.png")
+                .courseUrl("hr.sberbank.ru")
                 .knowledgeFor("")
                 .build());
+
+        //Опросы
 
         growthPulses.add(new GrowthPulse.Builder()
                 .name("Помоги сделать СитиМобил лучше!")
@@ -311,10 +325,10 @@ public class StubThirdpartyController {
                         "\n" +
                         "Мы – команда Клиентского опыта.\n" +
                         "Каждый квартал мы собираем и передаем продукту лучшие идеи по его развитию.\n")
-                .tags(new String[]{"survey", "agile"})
-                .duration(0)
-                .rating(4.6d)
-                .numOfViews(2419)
+                .tags(new String[]{"Опрос", "Экосистема"})
+                .duration(30)
+                .rating(4.3d)
+                .numOfViews(12)
                 .imageUrl(url + "/cityMobil.png")
                 .courseUrl("https://sbidea.ru/improject-429085")
                 .knowledgeFor("Если вы знаете, как закрыть конкретную «боль» клиента – скорее пишите нам.\n" +
@@ -326,8 +340,8 @@ public class StubThirdpartyController {
                 .name("Помоги сделать Сбер лучше!")
                 .type("growth")
                 .description("Предлагаем вам принять участие в улучшении процессов и продуктов Сбера!")
-                .tags(new String[]{"survey", "agile"})
-                .duration(0)
+                .tags(new String[]{"Опрос", "Экосистема"})
+                .duration(25)
                 .rating(4.6d)
                 .numOfViews(2419)
                 .imageUrl(url + "/sberIdeaOctober.jpg")
@@ -345,8 +359,8 @@ public class StubThirdpartyController {
                         "\n" +
                         "Мы – команда Клиентского опыта.\n" +
                         "Каждый квартал мы собираем и передаем продукту лучшие идеи по его развитию.\n")
-                .tags(new String[]{"survey", "agile"})
-                .duration(0)
+                .tags(new String[]{"Опрос", "Экосистема"})
+                .duration(30)
                 .rating(4.6d)
                 .numOfViews(2419)
                 .imageUrl(url + "/sberHealth.png")
@@ -362,8 +376,8 @@ public class StubThirdpartyController {
                         "\n" +
                         "Мы – команда Клиентского опыта.\n" +
                         "Каждый квартал мы собираем и передаем продукту лучшие идеи по его развитию.\n")
-                .tags(new String[]{"survey", "agile"})
-                .duration(0)
+                .tags(new String[]{"Опрос", "Экосистема"})
+                .duration(25)
                 .rating(4.6d)
                 .numOfViews(2419)
                 .imageUrl(url + "/sberSound.png")
@@ -372,8 +386,45 @@ public class StubThirdpartyController {
                         "Важно не только предлагать свои идеи, но и поддерживать отличные идеи коллег: лайкайте другие предложения - вам несложно, коллегам приятно, а продукту понятно, что идея – топчик\uD83D\uDE0E.\n" +
                         "Увидели крутую идею и знаете как сделать еще лучше? Комментируйте! Ведь одна голова хороша, а все сотрудники Сбера лучше \uD83D\uDE0E.")
                 .build());
-
-        //
+        //Книги
+        growthPulses.add(new GrowthPulse.Builder()
+                .name("Общение с трудными людьми!")
+                .type("growth")
+                .description("Эта книга объясняет науку, стояющую за нашими эмоциональными реакциямин на трудных людей."})
+                .duration(120)
+                .rating(5d)
+                .numOfViews(62)
+                .tags(new String[]{"Личная эффективность"})
+                .imageUrl(url + "/book.png")
+                .courseUrl("https://sbidea.ru/improject-429084")
+                .knowledgeFor("Узнать как выработать эмпатию и устойчивость, чтобы сделать отношения продуктивными")
+                .build());
+        //Статьи
+        growthPulses.add(new GrowthPulse.Builder()
+                .name("Как создать презентацию")
+                .type("growth")
+                .description("Чтобы хорошо показать свой проект, необходимо создать красивую и информативную презентацию."})
+                .duration(7
+                .rating(4.7d)
+                .numOfViews(438)
+                .tags(new String[]{"Личная эффективность", "Хакатон"})
+                .imageUrl(url + "/statya.png")
+                .courseUrl("hr.sberbank.ru")
+                .knowledgeFor("Как сделать ее яркой и запоминающейся, читатайте в статье Вячеслава Юрченкова, начальница центра развития образовательных технологий")
+                .build());
+        //Подкаст
+        growthPulses.add(new GrowthPulse.Builder()
+                .name("В поисках призвания: искать или создавать?")
+                .type("growth")
+                .description("Чем мы на самом деле заняты - деланием карьеры или реализаций потенциала?"})
+                .duration(60)
+                .rating(4.9d)
+                .tags(new String[]{"Work and balance"})
+                .numOfViews(885)
+                .imageUrl(url + "/podcast2.png")
+                .courseUrl("https://sbidea.ru/improject-429084")
+                .knowledgeFor("Призвание - как его понять и можно ли сделать карьеру сохранив себя как личность?")
+                .build());
 
         return growthPulses;
 
