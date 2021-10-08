@@ -108,7 +108,7 @@ public class StubThirdpartyController {
                 .duration(520)
                 .rating(4.7d)
                 .numOfViews(27)
-                .imageUrl(url + "/randomcoffee.jpeg")
+                .imageUrl(url + "/randomcoffee.jpg")
                 .courseUrl("https://sberbank-school.ru/programs/8627/about#")
                 .knowledgeFor("Тем, кто ищет друзей или вдохновляющих собеседников " +
                         "Встречи с интересными людьми разных профессий" +
@@ -186,7 +186,7 @@ public class StubThirdpartyController {
                 .duration(0)
                 .rating(4.8d)
                 .numOfViews(2419)
-                .imageUrl(url + "/sberUp.jpeg")
+                .imageUrl(url + "/sberUp1.png")
                 .courseUrl("https://sber-up.ru/")
                 .knowledgeFor("Познакомишься с руководителями компаний Экосистемы Сбера. \n" +
                         "Получишь возможность запустить с ними пилот или коммерческий контракт. \n" +
@@ -330,7 +330,7 @@ public class StubThirdpartyController {
                 .duration(0)
                 .rating(4.6d)
                 .numOfViews(2419)
-                .imageUrl(url + "/sberIdeaOctober.jpeg")
+                .imageUrl(url + "/sberIdeaOctober.jpg")
                 .courseUrl("https://sbidea.ru/improject-429103\n")
                 .knowledgeFor("Поделитесь своими идеями по улучшению процессов и продуктов. Вместе мы можем улучшить, то, что мешает нашему движению вперёд, что можно и нужно внедрить уже сейчас.\n" +
                         "\n" +
