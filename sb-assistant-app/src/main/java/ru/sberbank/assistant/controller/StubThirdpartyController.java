@@ -100,7 +100,6 @@ public class StubThirdpartyController {
         List<GrowthPulse> growthPulses = new ArrayList<>();
 
 
-
         //обучения
         growthPulses.add(new GrowthPulse.Builder()
                 .name("SberMock - централизованный сервис управления эмуляциями")
@@ -118,67 +117,67 @@ public class StubThirdpartyController {
         growthPulses.add(new GrowthPulse.Builder()
                 .name("Общение с трудными людьми!")
                 .type("growth")
-                .description("Эта книга объясняет науку, стояющую за нашими эмоциональными реакциямин на трудных людей."})
-            .duration(120)
+                .description("Эта книга объясняет науку, стояющую за нашими эмоциональными реакциямин на трудных людей.")
+                .duration(120)
                 .rating(5d)
                 .numOfViews(62)
-                .tags(new String[]{"Личная эффективность","Книга"})
-            .imageUrl(url + "/book.png")
+                .tags(new String[]{"Личная эффективность", "Книга"})
+                .imageUrl(url + "/book.png")
                 .courseUrl("https://sbidea.ru/improject-429084")
                 .knowledgeFor("Узнать как выработать эмпатию и устойчивость, чтобы сделать отношения продуктивными")
                 .build());
-    //Статьи
+        //Статьи
         growthPulses.add(new GrowthPulse.Builder()
                 .name("Как создать презентацию")
                 .type("growth")
-                .description("Чтобы хорошо показать свой проект, необходимо создать красивую и информативную презентацию."})
-        .duration(7
-        .rating(4.7d)
-        .numOfViews(438)
-        .tags(new String[]{"Личная эффективность", "Статья"})
-        .imageUrl(url + "/statya.png")
-        .courseUrl("hr.sberbank.ru")
-        .knowledgeFor("Как сделать ее яркой и запоминающейся, читатайте в статье Вячеслава Юрченкова, начальница центра развития образовательных технологий")
-        .build());
+                .description("Чтобы хорошо показать свой проект, необходимо создать красивую и информативную презентацию.")
+                .duration(7)
+                .rating(4.7d)
+                .numOfViews(438)
+                .tags(new String[]{"Личная эффективность", "Статья"})
+                .imageUrl(url + "/statya.png")
+                .courseUrl("hr.sberbank.ru")
+                .knowledgeFor("Как сделать ее яркой и запоминающейся, читатайте в статье Вячеслава Юрченкова, начальница центра развития образовательных технологий")
+                .build());
         //Подкаст
         growthPulses.add(new GrowthPulse.Builder()
-        .name("В поисках призвания: искать или создавать?")
-        .type("growth")
-        .description("Чем мы на самом деле заняты - деланием карьеры или реализаций потенциала?"})
-        .duration(60)
-        .rating(4.9d)
-        .tags(new String[]{"Work-life balance","Подкаст"})
-        .numOfViews(885)
-        .imageUrl(url + "/podcast2.png")
-        .courseUrl("https://sbidea.ru/improject-429084")
-        .knowledgeFor("Призвание - как его понять и можно ли сделать карьеру сохранив себя как личность?")
-        .build());
+                .name("В поисках призвания: искать или создавать?")
+                .type("growth")
+                .description("Чем мы на самом деле заняты - деланием карьеры или реализаций потенциала?")
+                .duration(60)
+                .rating(4.9d)
+                .tags(new String[]{"Work-life balance", "Подкаст"})
+                .numOfViews(885)
+                .imageUrl(url + "/podcast2.png")
+                .courseUrl("https://sbidea.ru/improject-429084")
+                .knowledgeFor("Призвание - как его понять и можно ли сделать карьеру сохранив себя как личность?")
+                .build());
 //ToDo Пульс
         growthPulses.add(new GrowthPulse.Builder()
-        .name("У тебя просроченная задача!")
-        .type("growth")
-        .description("Провести исследования инструментов для веб-аналитики")
-        .tags(new String[]{"Пульс", "Личные задачи"})
-        .duration(5)
-        .rating(4.9d)
-        .numOfViews(349)
-        .imageUrl(url + "/tododeff.png")
-        .courseUrl("hr.sberbank.ru")
-        .knowledgeFor("Позволит собрать более точные метрики")
-        .build());
+                .name("У тебя просроченная задача!")
+                .type("growth")
+                .description("Провести исследования инструментов для веб-аналитики")
+                .tags(new String[]{"Пульс", "Личные задачи"})
+                .duration(5)
+                .rating(4.9d)
+                .numOfViews(349)
+                .imageUrl(url + "/tododeff.png")
+                .courseUrl("hr.sberbank.ru")
+                .knowledgeFor("Позволит собрать более точные метрики")
+                .build());
 
         growthPulses.add(new GrowthPulse.Builder()
-        .name("У тебя важная задача от HR!")
-        .type("growth")
-        .description("Ознакомление с документами")
-        .tags(new String[]{"Пульс", "Документы"})
-        .duration(2)
-        .rating(4.1d)
-        .numOfViews(579)
-        .imageUrl(url + "/signDoc.png")
-        .courseUrl("hr.sberbank.ru")
-        .knowledgeFor("")
-        .build());
+                .name("У тебя важная задача от HR!")
+                .type("growth")
+                .description("Ознакомление с документами")
+                .tags(new String[]{"Пульс", "Документы"})
+                .duration(2)
+                .rating(4.1d)
+                .numOfViews(579)
+                .imageUrl(url + "/signDoc.png")
+                .courseUrl("hr.sberbank.ru")
+                .knowledgeFor("")
+                .build());
         //Random Coffee
         growthPulses.add(new GrowthPulse.Builder()
                 .name("Random Coffee")
@@ -198,87 +197,85 @@ public class StubThirdpartyController {
                 .build());
 
 
-
         growthPulses.add(new GrowthPulse.Builder()
-        .name("Лучший по профессии!")
-        .type("growth")
-        .description("\n" +
-        "Конкурс профессионального мастерства.\n" +
-        "Победители будут определены по итогам оценки корпоративных компетенций: профессиональных и «мягких навыков».\n" +
-        "Лучший по профессии - это возможность:\n" +
-        "развиваться в профессии и строить карьеру;\n" +
-        "ставить перед собой амбициозные цели;\n" +
-        "получить стимул для личного и профессионального роста.")
-        .tags(new String[]{"Разработка", "Хакатон"})
-        .duration(15)
-        .rating(4.7d)
-        .numOfViews(390)
-        .imageUrl(url + "/bestProfi2.png")
-        .courseUrl("https://sbidea.ru/lp2021/main\n")
-        .knowledgeFor("Приобретешь веру в себя, признание коллег.\n" +
-        "Заведешь новые интересные знакомства.\n" +
-        "Прокачаешь свои навыки в хакатоне и бизнес-играх.\n" +
-        "\n" +
-        "Победители и призеры будут награждены:\n" +
-        "знаками отличия «Лучший по профессии»,\n" +
-        "сертификатом на программу обучения «Лидеры будущего»,\n" +
-        "денежной премией.")
-        .build());
+                .name("Лучший по профессии!")
+                .type("growth")
+                .description("\n" +
+                        "Конкурс профессионального мастерства.\n" +
+                        "Победители будут определены по итогам оценки корпоративных компетенций: профессиональных и «мягких навыков».\n" +
+                        "Лучший по профессии - это возможность:\n" +
+                        "развиваться в профессии и строить карьеру;\n" +
+                        "ставить перед собой амбициозные цели;\n" +
+                        "получить стимул для личного и профессионального роста.")
+                .tags(new String[]{"Разработка", "Хакатон"})
+                .duration(15)
+                .rating(4.7d)
+                .numOfViews(390)
+                .imageUrl(url + "/bestProfi2.png")
+                .courseUrl("https://sbidea.ru/lp2021/main\n")
+                .knowledgeFor("Приобретешь веру в себя, признание коллег.\n" +
+                        "Заведешь новые интересные знакомства.\n" +
+                        "Прокачаешь свои навыки в хакатоне и бизнес-играх.\n" +
+                        "\n" +
+                        "Победители и призеры будут награждены:\n" +
+                        "знаками отличия «Лучший по профессии»,\n" +
+                        "сертификатом на программу обучения «Лидеры будущего»,\n" +
+                        "денежной премией.")
+                .build());
 
         //Видео
         growthPulses.add(new GrowthPulse.Builder()
-        .name("Как выиграть хакатон")
-        .type("growth")
-        .description("Секреты, как выигрывать хакатоны и рассказ про победу в международном хакатоне от McKinsey.")
-        .tags(new String[]{"Хакатон", "Youtube"})
-        .duration(20)
-        .rating(4.8d)
-        .numOfViews(319)
-        .imageUrl(url + "/youtube.png")
-        .courseUrl("https://www.youtube.com/watch?v=AhBEBZRtpx0\n")
-        .knowledgeFor("Из этого видео вы сможете узнать:\n" +
-        "- Что мечтает услышать каждый организатор хакатона в вашем решении\n" +
-        "- Как правильно работать над основными частями хакатона: бизнес частью, алгоритмами, презентацией решения.\n" +
-        "- Еще раз о пользе target encoding и cross-validation\n")
-        .build());
+                .name("Как выиграть хакатон")
+                .type("growth")
+                .description("Секреты, как выигрывать хакатоны и рассказ про победу в международном хакатоне от McKinsey.")
+                .tags(new String[]{"Хакатон", "Youtube"})
+                .duration(20)
+                .rating(4.8d)
+                .numOfViews(319)
+                .imageUrl(url + "/youtube.png")
+                .courseUrl("https://www.youtube.com/watch?v=AhBEBZRtpx0\n")
+                .knowledgeFor("Из этого видео вы сможете узнать:\n" +
+                        "- Что мечтает услышать каждый организатор хакатона в вашем решении\n" +
+                        "- Как правильно работать над основными частями хакатона: бизнес частью, алгоритмами, презентацией решения.\n" +
+                        "- Еще раз о пользе target encoding и cross-validation\n")
+                .build());
 
 
         growthPulses.add(new GrowthPulse.Builder()
-        .name("Помоги сделать СберЗдоровье лучше!")
-        .type("growth")
-        .description("Вместе сделаем СберЗдоровье лучшим сервисом телемедицины на рынке!\n" +
-        "\n" +
-        "Мы – команда Клиентского опыта.\n" +
-        "Каждый квартал мы собираем и передаем продукту лучшие идеи по его развитию.\n")
-        .tags(new String[]{"Опрос", "Экосистема"})
-        .duration(30)
-        .rating(4.6d)
-        .numOfViews(2419)
-        .imageUrl(url + "/sberHealth.png")
-        .courseUrl("https://sbidea.ru/improject-429082")
-        .knowledgeFor("Если вы знаете, как закрыть конкретную «боль» клиента – скорее пишите нам.\n" +
-        "Важно не только предлагать свои идеи, но и поддерживать отличные идеи коллег: лайкайте другие предложения - вам несложно, коллегам приятно, а продукту понятно, что идея – топчик\uD83D\uDE0E.\n" +
-        "Увидели крутую идею и знаете как сделать еще лучше? Комментируйте! Ведь одна голова хороша, а все сотрудники Сбера лучше \uD83D\uDE0E.")
-        .build());
+                .name("Помоги сделать СберЗдоровье лучше!")
+                .type("growth")
+                .description("Вместе сделаем СберЗдоровье лучшим сервисом телемедицины на рынке!\n" +
+                        "\n" +
+                        "Мы – команда Клиентского опыта.\n" +
+                        "Каждый квартал мы собираем и передаем продукту лучшие идеи по его развитию.\n")
+                .tags(new String[]{"Опрос", "Экосистема"})
+                .duration(30)
+                .rating(4.6d)
+                .numOfViews(2419)
+                .imageUrl(url + "/sberHealth.png")
+                .courseUrl("https://sbidea.ru/improject-429082")
+                .knowledgeFor("Если вы знаете, как закрыть конкретную «боль» клиента – скорее пишите нам.\n" +
+                        "Важно не только предлагать свои идеи, но и поддерживать отличные идеи коллег: лайкайте другие предложения - вам несложно, коллегам приятно, а продукту понятно, что идея – топчик\uD83D\uDE0E.\n" +
+                        "Увидели крутую идею и знаете как сделать еще лучше? Комментируйте! Ведь одна голова хороша, а все сотрудники Сбера лучше \uD83D\uDE0E.")
+                .build());
         growthPulses.add(new GrowthPulse.Builder()
-        .name("Помоги сделать СберЗвук лучше!")
-        .type("growth")
-        .description("Вместе сделаем СберЗвук лучшим музыкальным сервисом на рынке!!\n" +
-        "\n" +
-        "Мы – команда Клиентского опыта.\n" +
-        "Каждый квартал мы собираем и передаем продукту лучшие идеи по его развитию.\n")
-        .tags(new String[]{"Опрос", "Экосистема"})
-        .duration(25)
-        .rating(4.6d)
-        .numOfViews(2419)
-        .imageUrl(url + "/sberSound.png")
-        .courseUrl("https://sbidea.ru/improject-429084")
-        .knowledgeFor("Если вы знаете, как закрыть конкретную «боль» клиента – скорее пишите нам.\n" +
-        "Важно не только предлагать свои идеи, но и поддерживать отличные идеи коллег: лайкайте другие предложения - вам несложно, коллегам приятно, а продукту понятно, что идея – топчик\uD83D\uDE0E.\n" +
-        "Увидели крутую идею и знаете как сделать еще лучше? Комментируйте! Ведь одна голова хороша, а все сотрудники Сбера лучше \uD83D\uDE0E.")
-        .build());
+                .name("Помоги сделать СберЗвук лучше!")
+                .type("growth")
+                .description("Вместе сделаем СберЗвук лучшим музыкальным сервисом на рынке!!\n" +
+                        "\n" +
+                        "Мы – команда Клиентского опыта.\n" +
+                        "Каждый квартал мы собираем и передаем продукту лучшие идеи по его развитию.\n")
+                .tags(new String[]{"Опрос", "Экосистема"})
+                .duration(25)
+                .rating(4.6d)
+                .numOfViews(2419)
+                .imageUrl(url + "/sberSound.png")
+                .courseUrl("https://sbidea.ru/improject-429084")
+                .knowledgeFor("Если вы знаете, как закрыть конкретную «боль» клиента – скорее пишите нам.\n" +
+                        "Важно не только предлагать свои идеи, но и поддерживать отличные идеи коллег: лайкайте другие предложения - вам несложно, коллегам приятно, а продукту понятно, что идея – топчик\uD83D\uDE0E.\n" +
+                        "Увидели крутую идею и знаете как сделать еще лучше? Комментируйте! Ведь одна голова хороша, а все сотрудники Сбера лучше \uD83D\uDE0E.")
+                .build());
 
-        return growthPulses;
 
 /*        growthPulses.add(new GrowthPulse.Builder()
                 .name("Модель компетенций 2023")
@@ -312,7 +309,6 @@ public class StubThirdpartyController {
                 .build());
 
 
-
         growthPulses.add(new GrowthPulse.Builder()
                 .name("SberUp")
                 .type("growth")
@@ -331,7 +327,6 @@ public class StubThirdpartyController {
                 .build());
 
 
-
         growthPulses.add(new GrowthPulse.Builder()
                 .name("Сбер Профи")
                 .type("growth")
@@ -347,9 +342,6 @@ public class StubThirdpartyController {
                         "Повысишь свою visibility.\n" +
                         " Расширишь свой круг профессиональных контактов.")
                 .build());
-
-
-
 
 
         growthPulses.add(new GrowthPulse.Builder()
@@ -389,7 +381,7 @@ public class StubThirdpartyController {
                         "Увидели крутую идею и знаете как сделать еще лучше? Комментируйте! Ведь одна голова хороша, а все сотрудники Сбера лучше \uD83D\uDE0E.")
                 .build());
 */
-
+        return growthPulses;
 
     }
 
@@ -453,10 +445,7 @@ public class StubThirdpartyController {
                                 .link("vk.com/profile/123123")
                                 .name("vk").build()}).build());
 
-
         return profilePulses;
-
-
     }
 
 
