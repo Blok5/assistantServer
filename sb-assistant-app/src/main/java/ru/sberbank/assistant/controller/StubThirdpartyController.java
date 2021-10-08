@@ -126,7 +126,7 @@ public class StubThirdpartyController {
                 .duration(45)
                 .rating(4.7d)
                 .numOfViews(27)
-                .imageUrl(url + "/education-sberMock.png")
+                .imageUrl(url + "/sberMock2.png")
                 .courseUrl("https://sberbank-school.ru/programs/8627/about#")
                 .knowledgeFor("На хакатоне пригодится! ;)")
                 .build());
@@ -209,7 +209,7 @@ public class StubThirdpartyController {
                 .duration(15)
                 .rating(4.7d)
                 .numOfViews(390)
-                .imageUrl(url + "/bestProfi.jpeg")
+                .imageUrl(url + "/bestProfi2.png")
                 .courseUrl("https://sbidea.ru/lp2021/main\n")
                 .knowledgeFor("Приобретешь веру в себя, признание коллег.\n" +
                         "Заведешь новые интересные знакомства.\n" +
@@ -246,7 +246,7 @@ public class StubThirdpartyController {
                 .duration(20)
                 .rating(4.8d)
                 .numOfViews(319)
-                .imageUrl(url + "/bestProfi.jpeg")
+                .imageUrl(url + "/youtube.png")
                 .courseUrl("https://www.youtube.com/watch?v=AhBEBZRtpx0\n")
                 .knowledgeFor("Из этого видео вы сможете узнать:\n" +
                         "- Что мечтает услышать каждый организатор хакатона в вашем решении\n" +
@@ -264,7 +264,7 @@ public class StubThirdpartyController {
                 .duration(15)
                 .rating(4.8d)
                 .numOfViews(19)
-                .imageUrl(url + "/betterParent1.png")
+                .imageUrl(url + "/family.png")
                 .courseUrl("https://www.sbidea.ru/self-realization#parents\n")
                 .knowledgeFor("Зачем это мне?\n" +
                         "Сбер поддерживает сотрудников в разных ролях, и с особым вниманием мы относимся к нашим сотрудникам-родителям и тем, кто готовится ими стать. Семья, родительство, партнеры, дети, близкие, друзья – это то, что объединяет многих из нас и важно для каждого, ведь социальные связи и личные отношения - один из пяти элементов благополучия.\n" +
@@ -329,7 +329,7 @@ public class StubThirdpartyController {
                 .duration(30)
                 .rating(4.3d)
                 .numOfViews(12)
-                .imageUrl(url + "/cityMobil.png")
+                .imageUrl(url + "/cityMobil3.png")
                 .courseUrl("https://sbidea.ru/improject-429085")
                 .knowledgeFor("Если вы знаете, как закрыть конкретную «боль» клиента – скорее пишите нам.\n" +
                         "Важно не только предлагать свои идеи, но и поддерживать отличные идеи коллег: лайкайте другие предложения - вам несложно, коллегам приятно, а продукту понятно, что идея – топчик\uD83D\uDE0E.\n" +
