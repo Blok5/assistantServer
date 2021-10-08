@@ -293,7 +293,7 @@ public class StubThirdpartyController {
         //Опросы
         growthPulses.add(new GrowthPulse.Builder()
                 .name("Срочно нужна обратная связь!")
-                .type("survey")
+                .type("growth")
                 .description("Отбор респондентов для интервью по клиентскому опыту. Ищем респондентов для опросов и интервью")
                 .tags(new String[]{"survey", "agile"})
                 .duration(0)
@@ -306,7 +306,7 @@ public class StubThirdpartyController {
 
         growthPulses.add(new GrowthPulse.Builder()
                 .name("Помоги сделать СитиМобил лучше!")
-                .type("survey")
+                .type("growth")
                 .description("Вместе сделаем Ситимобил лучшим сервисом заказа такси на рынке!\n" +
                         "\n" +
                         "Мы – команда Клиентского опыта.\n" +
@@ -324,7 +324,7 @@ public class StubThirdpartyController {
 
         growthPulses.add(new GrowthPulse.Builder()
                 .name("Помоги сделать Сбер лучше!")
-                .type("survey")
+                .type("growth")
                 .description("Предлагаем вам принять участие в улучшении процессов и продуктов Сбера!")
                 .tags(new String[]{"survey", "agile"})
                 .duration(0)
@@ -340,7 +340,7 @@ public class StubThirdpartyController {
                 .build());
         growthPulses.add(new GrowthPulse.Builder()
                 .name("Помоги сделать СберЗдоровье лучше!")
-                .type("survey")
+                .type("growth")
                 .description("Вместе сделаем СберЗдоровье лучшим сервисом телемедицины на рынке!\n" +
                         "\n" +
                         "Мы – команда Клиентского опыта.\n" +
@@ -357,7 +357,7 @@ public class StubThirdpartyController {
                 .build());
         growthPulses.add(new GrowthPulse.Builder()
                 .name("Помоги сделать СберЗвук лучше!")
-                .type("survey")
+                .type("growth")
                 .description("Вместе сделаем СберЗвук лучшим музыкальным сервисом на рынке!!\n" +
                         "\n" +
                         "Мы – команда Клиентского опыта.\n" +
